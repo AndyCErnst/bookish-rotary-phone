@@ -5,26 +5,42 @@ import { Category } from 'types'
 import { Topic } from 'components/TopicSections'
 import { ClickableImage } from 'components/ClickableImage'
 import { BroadsidesOfDay } from './BroadsidesOfDay'
-import { OverviewBase } from './OverviewBase'
+import { OverviewBase } from 'components/OverviewBase'
+
 
 export const Trials = () => {
-  const params = useParams<{topic: Category}>()
+  const params = useParams<{ topic: Category }>()
   return (
-     <OverviewBase title="Trials" sections={[
-      [<Post>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin feugiat at quam id tempus. In vestibulum sit amet metus quis pretium. Vestibulum purus tortor, bibendum a semper a, iaculis et nisl. Nulla ut ligula odio. Aenean blandit, nisi quis pharetra consectetur, quam dui consectetur eros, at tincidunt mauris ante non erat. Donec vitae lectus nec mi dapibus fringilla. Etiam urna arcu, tempor sed magna nec, commodo aliquam dolor. Suspendisse bibendum vehicula tellus vel facilisis. Nulla diam nisl, suscipit quis lorem eu, porta luctus lorem. Nullam iaculis ultricies nisi sit amet pretium. Praesent vitae ex a lorem fringilla ultrices. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris a nunc lobortis, rhoncus lacus eu, lobortis orci.</Post>, 12],
-      [
-        <Post>
-          <ClickableImage name="viz/Trials_outcomes.png" />
-        </Post>,
-        8,
-      ],
-      [<BroadsidesOfDay topic={params.topic!}/>, 4],
-      [
-        <Post>
-          <ClickableImage name="viz/Trials_reasons.png" />
-        </Post>,
-        8,
-      ],
-      ]} />
+    <OverviewBase
+      title="Trials"
+      sections={[
+        [
+          <Post>
+            Trials were commonly reported on, and one of the most popular topics
+            printed in the Scottish broadsides. Crimes and the resulting trial
+            could be printed in a number of issues to cover the original crime,
+            the trial, the execution and confessions and last words. Many of the
+            speeches made on the scaffold and confessions were not real, and
+            instead imagined by the writers of the broadside. Below we have
+            produced two summary visualisations that show what crimes people
+            were tried for and the outcomes of the trials.
+          </Post>,
+          12,
+        ],
+        [
+          <Post>
+            <ClickableImage name="viz/Trials_outcomes.png" />
+          </Post>,
+          8,
+        ],
+        [<BroadsidesOfDay topic={params.topic!} />, 4],
+        [
+          <Post>
+            <ClickableImage name="viz/Trials_reasons.png" />
+          </Post>,
+          8,
+        ],
+      ]}
+    />
   )
 }

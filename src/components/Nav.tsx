@@ -27,9 +27,10 @@ export const Nav = () => {
           to={`/broadsides/${getRandomBroadside().id}`}
           className={'Nav_link'}
         >
-          random broadside
+          Random Broadside
         </NavLink>
         <NLink to="/search" text="Search" />
+        <NLink to="/our-work" text="Our Work" />
       </ul>
     </nav>
   )

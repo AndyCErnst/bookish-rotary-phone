@@ -1,7 +1,7 @@
-import { Image } from 'components/Image'
+import { BroadsideImage } from 'components/Image'
 import { ClickableImage } from 'components/ClickableImage'
 import { Post } from 'components/Post'
-import { OverviewBase } from './OverviewBase'
+import { OverviewBase } from 'components/OverviewBase'
 import PerYear from 'images/viz/BroadsidesBasics_No._broadsides_per_year.png'
 import Places from 'images/viz/BroadsideBasics_CommonPlaces.png'
 import Topics from 'images/viz/BroadsideBasics_Topics.png'
@@ -11,7 +11,17 @@ export const AboutBroadsides = () => {
     <OverviewBase
       title="About Scottish Broadsides"
       sections={[
-        [<Post>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin feugiat at quam id tempus. In vestibulum sit amet metus quis pretium. Vestibulum purus tortor, bibendum a semper a, iaculis et nisl. Nulla ut ligula odio. Aenean blandit, nisi quis pharetra consectetur, quam dui consectetur eros, at tincidunt mauris ante non erat. Donec vitae lectus nec mi dapibus fringilla. Etiam urna arcu, tempor sed magna nec, commodo aliquam dolor. Suspendisse bibendum vehicula tellus vel facilisis. Nulla diam nisl, suscipit quis lorem eu, porta luctus lorem. Nullam iaculis ultricies nisi sit amet pretium. Praesent vitae ex a lorem fringilla ultrices. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris a nunc lobortis, rhoncus lacus eu, lobortis orci.</Post>, 12],
+        [
+          <Post>
+            Broadsides are single sided newspaper sheets posted in public places
+            and sold by street vendors. They were and early version of the
+            tabloid press. Broadsides first printed official notices and royal
+            proclamations but later, the broadsides became an early form of
+            popular culture, by printing songs, gallows speeches and
+            sensationalised crime.
+          </Post>,
+          12,
+        ],
         // add styled <hr /> here
         [
           <Post title="What were they reading?">

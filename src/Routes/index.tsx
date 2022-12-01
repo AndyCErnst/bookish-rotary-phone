@@ -8,6 +8,7 @@ import { Topic } from '../pages/Overview/index'
 import { LandingPage } from '../pages/LandingPage/index'
 import { Now } from '../pages/NowPage/index'
 import { Search } from '../pages/SearchPage/index'
+import { OurWork } from '../pages/OurWork/index'
 import Blog from '../BlogSample/Blog'
 
 
@@ -44,6 +45,10 @@ export const router = createBrowserRouter([
       {
         path: '/now',
         element: <Now />,
+      },
+      {
+        path: '/our-work',
+        element: <OurWork />,
       },
       {
         path: '/search',

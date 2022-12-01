@@ -4,7 +4,7 @@ import { Post } from 'components/Post'
 import { Category } from 'types'
 import { Topic } from 'components/TopicSections'
 import { BroadsidesOfDay } from './BroadsidesOfDay'
-import { OverviewBase } from './OverviewBase'
+import { OverviewBase } from 'components/OverviewBase'
 import { ClickableImage } from 'components/ClickableImage'
 
 export const Courtship = () => {
@@ -15,18 +15,15 @@ export const Courtship = () => {
       sections={[
         [
           <Post>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-            feugiat at quam id tempus. In vestibulum sit amet metus quis
-            pretium. Vestibulum purus tortor, bibendum a semper a, iaculis et
-            nisl. Nulla ut ligula odio. Aenean blandit, nisi quis pharetra
-            consectetur, quam dui consectetur eros, at tincidunt mauris ante non
-            erat. Donec vitae lectus nec mi dapibus fringilla. Etiam urna arcu,
-            tempor sed magna nec, commodo aliquam dolor. Suspendisse bibendum
-            vehicula tellus vel facilisis. Nulla diam nisl, suscipit quis lorem
-            eu, porta luctus lorem. Nullam iaculis ultricies nisi sit amet
-            pretium. Praesent vitae ex a lorem fringilla ultrices. Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit. Mauris a nunc lobortis,
-            rhoncus lacus eu, lobortis orci.
+            Courtship and love in the time period of the Scottish broadsides is
+            an interesting topic to explore further. Courtship and love was
+            written about in a variety of ways, including songs, such as
+            romantic love letters; humour, such as silly lover letters; and
+            crimes of passion, which were written about in the context of murder
+            and trials. Below are some summary visualisations that show where in
+            Scotland courtship was written about, what words were commonly used
+            before love and the topics that were written about in broadsides
+            about courtship.
           </Post>,
           12,
         ],

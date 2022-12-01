@@ -1,5 +1,5 @@
-import { Box, Container, T, Link } from 'MUI'
-import './Footer.css'
+import { Box, Grid, Container, T, Link, Stack } from 'MUI'
+import { colors } from 'utils/color'
 
 function Copyright() {
   return (
@@ -12,9 +12,32 @@ function Copyright() {
 }
 
 export function Footer() {
+  const today = new Date()
+  const border = '2px solid #5e340c'
   return (
-    <Box component="footer" sx={{ py: 1 }} className="Footer">
-      <Container maxWidth="lg">
+    <Box
+      component="footer"
+      sx={{ backgroundColor: colors.yellowed, marginTop: 4 }}
+    >
+      <Box sx={{ py: 2, textAlign: 'center', textTransform: 'uppercase', borderTop: border, borderBottom: border }}>
+        <T variant="h6" component="div">
+          <Grid container>
+            <Grid xs={2}>Volume I</Grid>
+            <Grid xs={8}>
+              {today.toLocaleDateString('en-GB', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+              })}
+            </Grid>
+            <Grid xs={2} sx={{textAlign: 'center'}}>
+              Cost: 1 Penny
+            </Grid>
+          </Grid>
+        </T>
+      </Box>
+      <Container maxWidth="lg" sx={{ py: 2 }} className="Footer">
         {/* <T variant="h6" align="center" gutterBottom>
           something
         </T>
@@ -29,8 +52,11 @@ export function Footer() {
 
         <T variant="body2" color="text.secondary" align="center">
           {'Broadside data is property of '}
-          <Link color="inherit" href="https://data.nls.uk/data/digitised-collections/broadsides-printed-in-scotland/">
-          The National Library of Scotland
+          <Link
+            color="inherit"
+            href="https://data.nls.uk/data/digitised-collections/broadsides-printed-in-scotland/"
+          >
+            The National Library of Scotland
           </Link>
         </T>
         <T variant="body2" color="text.secondary" align="center">

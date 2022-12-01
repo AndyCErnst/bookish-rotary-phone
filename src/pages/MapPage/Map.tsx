@@ -33,7 +33,7 @@ export const MapWrapper = (props: MapProps) => {
     <div>
       <MapContainer
         className="mapContainer"
-        center={startingPosition}
+        // center={startingPosition}
         zoom={13}
         scrollWheelZoom={false}
       >

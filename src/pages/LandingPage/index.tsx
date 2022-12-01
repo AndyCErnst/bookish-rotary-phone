@@ -1,7 +1,7 @@
 import { Button, Stack, Grid, Box } from 'MUI'
 import { ComponentProps, ReactNode } from 'react'
 import { Link } from 'react-router-dom'
-import { Block, ColoredBlock, NullBlock, ImageBlock } from './Block'
+import { Block, ColoredBlock, NullBlock, ImageBlock } from 'components/Block'
 import Song from 'images/song.png'
 import Ballad from 'images/ballads.png'
 import Courtship from 'images/courtship.png'
@@ -15,7 +15,8 @@ import './index.css'
 
 export const LandingPage = () => {
   const sections: [ReactNode, number][] = [
-      [<NullBlock />, 9],
+      [<NullBlock />, 6],
+      [<ColoredBlock color="white" content="1,726 Broadsides" darkText />, 3],
       [<ColoredBlock color="tan" content="1650-1910" />, 3],
       [<NullBlock />, 12],
       [<NullBlock />, 12],

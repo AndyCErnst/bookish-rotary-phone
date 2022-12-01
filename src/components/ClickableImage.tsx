@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Stack, DialogTitle, Dialog, Box } from 'MUI'
-import { Image } from './Image'
+import { BroadsideImage } from './Image'
 import './ClickableImage.css'
 import { StringMappingType } from 'typescript'
 
@@ -16,13 +16,17 @@ export const ClickableImage = ({
   dialogTitle?: string
 }) => {
   const [open, setOpen] = useState(false)
-
+  const image = src ? (
+    <img src={src} alt={alt} className="clickableImage" />
+  ) : (
+    <BroadsideImage name={name} alt={alt} className="clickableImage" />
+  )
   return (
     <>
       <Dialog onClose={() => setOpen(false)} open={open} maxWidth={false}>
-        <Box sx={{padding: 1}}>
+        <Box sx={{ padding: 1 }}>
           <DialogTitle>{dialogTitle}</DialogTitle>
-          <Image name={name} alt={alt} />
+          {image}
         </Box>
       </Dialog>
       <div
@@ -31,8 +35,7 @@ export const ClickableImage = ({
         tabIndex={0}
         className="Button"
       >
-        {src ? <img src={src} alt={alt} className="clickableImage" /> : null}
-        {name ? <Image name={name} alt={alt} className="clickableImage" /> : null}
+        {image}
       </div>
     </>
   )

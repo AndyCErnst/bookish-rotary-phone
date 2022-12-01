@@ -1,4 +1,4 @@
-const colors: Record<string, string> = {
+export const colors: Record<string, string> = {
   white: '#ffffff',
   yellowed: '#f8f8ea',
   rust: '#ac4807',

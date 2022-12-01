@@ -1,8 +1,5 @@
-import { Button, Stack, T } from 'MUI'
+import { T } from 'MUI'
 import { Topic } from 'components/TopicSections'
-import { Image } from 'components/Image'
-import { Post } from 'components/Post'
-import './OverviewBase.css'
 
 interface OverviewBaseProps {
     title: string
@@ -12,7 +9,7 @@ interface OverviewBaseProps {
 export const OverviewBase = ({title, sections}: OverviewBaseProps) => {
     return (
         <article>
-            <T variant="h3" component="h1" className='overviewTitle'>{title}</T>
+            <T variant="h3" component="h1" sx={{marginBottom: 3}}>{title}</T>
             <Topic sections={sections} />
         </article>
     )
