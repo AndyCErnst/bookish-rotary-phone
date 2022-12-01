@@ -9,7 +9,6 @@ import { LandingPage } from '../pages/LandingPage/index'
 import { Now } from '../pages/NowPage/index'
 import { Search } from '../pages/SearchPage/index'
 import { OurWork } from '../pages/OurWork/index'
-import Blog from '../BlogSample/Blog'
 
 
 export const router = createBrowserRouter([
@@ -33,10 +32,6 @@ export const router = createBrowserRouter([
       {
         path: '/broadsides/:id',
         element: <BroadsideView />,
-      },
-      {
-        path: '/blog',
-        element: <Blog />,
       },
       {
         path: '/map',
