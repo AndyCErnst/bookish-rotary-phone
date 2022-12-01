@@ -16,7 +16,7 @@ export const BroadsideView = () => {
 
   return (
     <article className="Broadside">
-      <h1>{title}</h1>
+      <h2>{title}</h2>
       <Stack direction="row" spacing="2" justifyContent={"space-between"}>
         <div>
           <strong>{year}</strong>

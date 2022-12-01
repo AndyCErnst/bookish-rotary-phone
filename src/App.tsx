@@ -4,8 +4,9 @@ import { router } from './Routes/index'
 
 import './App.css'
 
-const headingFont = 'Rye, cursive'
-const bodyFont = ['Cormorant Garamond', 'Helvetica Neue', 'serif'].join(',')
+const h1Font = 'Rye, cursive'
+const headingFont = 'Vollkorn SC, cursive'
+const bodyFont = 'Vesper Libre, Helvetica Neue, serif'
 
 // https://mui.com/material-ui/customization/theming/
 export const theme: ThemeOptions = createTheme({
@@ -17,6 +18,13 @@ export const theme: ThemeOptions = createTheme({
         },
       },
     },
+    // MuiTooltip: {
+    //   styleOverrides: {
+    //     popper: {
+    //       fontSize: '106px'
+    //     }
+    //   }
+    // }
   },
   palette: {
     primary: {
@@ -32,13 +40,16 @@ export const theme: ThemeOptions = createTheme({
       fontFamily: headingFont,
     },
     h1: {
-      fontFamily: headingFont,
+      fontFamily: h1Font,
+      fontSize: '48px'
     },
     h2: {
       fontFamily: headingFont,
+      fontSize: '28px'
     },
     h3: {
       fontFamily: headingFont,
+      fontSize: '18px'
     },
     button: {
       fontWeight: 'bold'

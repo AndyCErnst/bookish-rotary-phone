@@ -1,4 +1,4 @@
-import { T } from 'MUI'
+import { Box } from 'MUI'
 import { Topic } from 'components/TopicSections'
 
 interface OverviewBaseProps {
@@ -9,7 +9,9 @@ interface OverviewBaseProps {
 export const OverviewBase = ({title, sections}: OverviewBaseProps) => {
     return (
         <article>
-            <T variant="h3" component="h1" sx={{marginBottom: 3, textAlign: 'center'}}>{title}</T>
+            <Box sx={{ textAlign: 'center'}}>
+            <h1 >{title}</h1>
+            </Box>
             <Topic sections={sections} />
         </article>
     )

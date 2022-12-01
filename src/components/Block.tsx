@@ -1,47 +1,60 @@
-import { Button, Stack, Grid, Box, T } from 'MUI'
+import { Stack, Box, T } from 'MUI'
 import { ComponentProps, ReactNode } from 'react'
-import { mapColor, Color } from 'utils/color'
-import './Block.css'
+import { mapColor, Color, colors } from 'utils/color'
+
+const BlockCSS = { height: '300px', boxSizing: 'border-box' }
 
 interface BlockProps {
-  content: ReactNode
+  children?: ReactNode
   className?: string
   sx?: ComponentProps<typeof Box>['sx']
 }
-export const Block = ({ content, className, sx }: BlockProps) => {
+export const Block = ({ children, className, sx }: BlockProps) => {
   return (
-    <Box className={'Block ' + className} sx={sx}>
-      {content}
+    <Box className={className} sx={sx}>
+      {children}
     </Box>
   )
 }
 
 interface ColoredBlockProps extends BlockProps {
+  title?: string
   color: Color
   darkText?: boolean
 }
 
-export const ColoredBlock = (props: ColoredBlockProps) => {
+export const ColoredBlock = ({
+  children,
+  color,
+  darkText,
+  title,
+  ...props
+}: ColoredBlockProps) => {
   const Title = (
-    <T
-      variant="h3"
-      component="div"
-      className={'Block__Text ' + (props.darkText ? 'Block__TextDark' : '')}
-    >
-      {props.content}
+    <T variant="h2" component="div" sx={{ width: '100%' }}>
+      {title}
     </T>
   )
   return (
     <Block
       {...props}
-      className="BlockCenteredText"
-      content={Title}
-      sx={{ backgroundColor: mapColor(props.color) }}
-    />
+      sx={{
+        ...BlockCSS,
+        backgroundColor: mapColor(color),
+        padding: 3,
+        color: darkText ? colors.coffee : colors.white,
+        wordBreak: 'break-word',
+      }}
+    >
+      <Stack>
+        {Title}
+        {children}
+      </Stack>
+    </Block>
   )
 }
 
-export const NullBlock = () => <Box className={'Block'} />
+export const NullBlock = () => <Box sx={{ ...BlockCSS }} />
 
 export const ImageBlock = ({
   src,
@@ -52,9 +65,13 @@ export const ImageBlock = ({
   alt: string
   color?: Color
 }) => (
-  <Block
-    className={'Block--Img'}
-    sx={{ backgroundColor: mapColor(color) }}
-    content={<img src={src} alt={alt} className="BlockImg" />}
-  />
+  <Block sx={{ backgroundColor: mapColor(color) }}>
+    {
+      <img
+        src={src}
+        alt={alt}
+        style={{ height: BlockCSS.height, maxWidth: '100%' }}
+      />
+    }
+  </Block>
 )

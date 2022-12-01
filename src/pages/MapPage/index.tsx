@@ -1,7 +1,8 @@
 import { useState, useCallback, useMemo, useEffect } from 'react'
 import { Category } from 'types'
-import { Grid, Container, Stack, Box } from 'MUI'
+import { Grid, Container, Stack, T } from 'MUI'
 import { ArticleList } from 'components/ArticleList'
+import { ResultsNumber } from 'components/ResultsNumber'
 import { broadsidesList } from 'data'
 import { Location, catsList, Broadside } from 'types'
 import { MapWrapper } from './Map'
@@ -11,15 +12,23 @@ import './index.css'
 
 const initialTimeRange: [number, number] = [1643, 1910]
 const timeRangeIsInitial = (timeRange: [number, number]) =>
-timeRange[0] === initialTimeRange[0] && timeRange[1] === initialTimeRange[1]
+  timeRange[0] === initialTimeRange[0] && timeRange[1] === initialTimeRange[1]
 
-const noFiltersSelected = (timeRange: [number, number], activeCats: Category[], noneCat: boolean, location?: Location) => 
-  timeRangeIsInitial(timeRange) && activeCats.length === catsList.length && noneCat && !location
+const noFiltersSelected = (
+  timeRange: [number, number],
+  activeCats: Category[],
+  noneCat: boolean,
+  location?: Location
+) =>
+  timeRangeIsInitial(timeRange) &&
+  activeCats.length === catsList.length &&
+  noneCat &&
+  !location
 
 const matchesCats = (
   activeCats: Category[],
   noneCat: boolean,
-  cats: Category[],
+  cats: Category[]
 ) => {
   // nothing selected, display same as everything selected
   if (noneCat && activeCats.length === catsList.length) {
@@ -49,7 +58,7 @@ export const MapView = () => {
     setNoneCat(true)
     setTimeRange(initialTimeRange)
     setLocation(undefined)
-}, [])
+  }, [])
 
   // If the interaction starts getting slow, refactor to a debounce
   // and update the map with a delay.
@@ -79,7 +88,7 @@ export const MapView = () => {
         })
         return acc
       }, {} as Record<Location, number>),
-    [current],
+    [current]
   )
 
   const listed = useMemo(
@@ -87,19 +96,12 @@ export const MapView = () => {
       location
         ? current.filter((bs) => bs.locations.includes(location))
         : current,
-    [current, location],
+    [current, location]
   )
-
-  const numberDisplay = [
-    listed.length,
-    listed.length === 1 ? 'broadside' : 'broadsides',
-    location ? 'mentioning ' + location : '',
-    filtering ? 'for these filters' : '',
-  ].join(' ')
 
   return (
     <section className={'MapPage'}>
-      <Grid container spacing={2} >
+      <Grid container spacing={2}>
         <Grid xs={12} md={4}>
           <FilterControl
             setCats={setCats}
@@ -123,10 +125,13 @@ export const MapView = () => {
       />
       <section>
         <Stack>
-          <Box sx={{ paddingY: 2 }}>
-            <div className="BroadsidesNumber">{numberDisplay}</div>
-          </Box>
-          <h3>Broadsides</h3>
+        <T variant="h3" sx={{marginTop: 4}}>Matching Broadsides</T>
+          <ResultsNumber
+            matching={listed}
+            location={location}
+            filters={filtering}
+          />
+
           <ArticleList articles={listed} />
         </Stack>
       </section>

@@ -1,11 +1,13 @@
 import { useState } from 'react'
 import { Link, NavLink, useParams } from 'react-router-dom'
-import { Button, Menu, MenuItem } from 'MUI'
+import { Box, Menu, MenuItem, Tooltip } from 'MUI'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import { catsList } from 'types'
 import { getRandomBroadside } from 'utils/randomGenerator'
 import ImgText from '../images/banner/broadsides.svg'
 import ImgShadow from '../images/banner/shadow.svg'
+import SearchIcon from '@mui/icons-material/Search'
+
 import './Nav.css'
 
 export const Nav = () => {
@@ -15,13 +17,13 @@ export const Nav = () => {
       <h1 className="NavTitle">
         <Link to="/" className="NavTitle__Link">
           <img alt="Broadsides" src={ImgShadow} />
-          <img alt="" src={ImgText} className="NavTitle__Text"/>
+          <img alt="" src={ImgText} className="NavTitle__Text" />
         </Link>
       </h1>
       <ul className="Nav">
+        <NLink to="/summary" text="About broadsides" />
         <TopicMenu />
         <NLink to="/map" text="Map" />
-        <NLink to="/summary" text="About broadsides" />
         <NavLink
           key={id}
           to={`/broadsides/${getRandomBroadside().id}`}
@@ -29,8 +31,17 @@ export const Nav = () => {
         >
           Random Broadside
         </NavLink>
-        <NLink to="/search" text="Search" />
         <NLink to="/our-work" text="Our Work" />
+        <NLink
+          to="/search"
+          text={
+            <Box sx={{ height: 2 }}>
+              <Tooltip title="Search">
+                <SearchIcon />
+              </Tooltip>
+            </Box>
+          }
+        />
       </ul>
     </nav>
   )
@@ -80,7 +91,13 @@ const TopicMenu = () => {
   )
 }
 
-const NLink = ({ to, text }: { to: string; text: string }) => (
+const NLink = ({
+  to,
+  text,
+}: {
+  to: string
+  text: string | React.ReactNode
+}) => (
   <li>
     <NavLink
       to={to}

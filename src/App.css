@@ -18,11 +18,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: black;
   font-size: 17px;
-}
-
-h1 {
-  font-family: 'Rye', cursive;
-  font-weight: normal;
+  line-height: 1.5;
 }
 
 h2,h3,h4,h5,h6 {
@@ -32,12 +28,16 @@ h2,h3,h4,h5,h6 {
 
 /* These should be in the theme, but writing directly to save time */
 h1 {
-  font-size: 30px;
-  margin-top: 0;
+  font-family: 'Rye', cursive;
+  font-weight: normal;
+  font-size: 48px;
   text-transform: uppercase;
+  margin-bottom: 20px;
+  margin-top: 0;
 }
+
 h2 {
-  font-size: 22px;
+  font-size: 28px;
   margin-top: 0;
   margin-bottom: 8px;
 }
