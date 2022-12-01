@@ -1,0 +1,21 @@
+.Broadside {
+    background-color: #f8f8ea;
+    padding: 32px 16px;
+}
+
+.Broadside__body {
+    white-space: pre-line;
+    flex-grow: 1;
+    /* columns: 2; */
+}
+
+.Broadside__container {
+    width: 100%;
+    margin-top: 16px;
+}
+
+.imageContainer {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 300px;
+}

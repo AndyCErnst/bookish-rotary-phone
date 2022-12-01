@@ -1,0 +1,25 @@
+.mapContainer {
+    height: 600px;
+    width: 100%;
+}
+
+/* give a more old-school look  */
+.leaflet-tile {
+    /* filter: contrast(0.8) sepia(0.3) !important; */
+    /* filter: contrast(0.7) sepia(0.7)  !important; */
+    filter: contrast(0.8) sepia(0.4) saturate(70%) !important;
+}
+
+.showAllButton {
+    position: absolute !important;
+    bottom: 8px;
+    left: 8px;
+    z-index: 1000;
+}
+
+.resetFiltersButton {
+    position: absolute !important;
+    bottom: 50px;
+    left: 8px;
+    z-index: 1000;
+}

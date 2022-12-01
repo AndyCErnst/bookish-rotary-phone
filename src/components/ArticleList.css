@@ -1,0 +1,10 @@
+.ArticleList {
+    margin: 0;
+    padding-left: 24px;
+}
+
+.ArticleLink {
+    display: block;
+    padding: 6px 0;
+    text-transform: capitalize;
+}

@@ -1,0 +1,66 @@
+.NavContainer {
+  background-color: #f8f8ea;
+  border-bottom: 2px solid #5e340c;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.NavTitle {
+  margin-bottom: 0;
+  height: 160px;
+  background-image: url(../images/banner/banner.jpg);
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* Position the text a bit on top of the shadow */
+.NavTitle__Text {
+  top: -100%;
+  left: -8px;
+  position: relative;
+  z-index: 1;
+}
+
+.NavTitle__Link {
+    height: 80px;
+    color: black;
+    width: 600px;
+    display: block;
+    margin: auto;
+}
+
+.Nav {
+  list-style: none;
+  display: inline-flex;
+  text-transform: uppercase;
+  flex-wrap: wrap;
+  margin: 16px;
+}
+
+.Nav_link {
+  padding: 0 16px;
+  font-size: 18px;
+  display: inherit;
+  font-weight: bold;
+}
+.Nav_link:visited {
+  color: var(--linkColor);
+}
+
+.Nav_link:hover,
+.Nav_link:active {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.Nav_link.Nav_link--active {
+  cursor: default;
+  /* text-decoration: none; */
+}
+
+.Nav_link.noUnderline {
+  text-decoration: none;
+}

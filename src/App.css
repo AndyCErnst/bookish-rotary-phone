@@ -1,0 +1,71 @@
+/* These don't work somehow */
+:root {
+  -—white: #ffffff;
+  --yellowed: #f8f8ea;
+  -—rust: #ac4807;
+  -—slate: #2d2d2d;
+  -—oldpaper: #e8ddc8;
+  -—tan: #dca76e;
+  -—leather: #ca7b1d;
+  -—coffee: #5e340c;
+  --blackish: #1d0e00;
+}
+
+body {
+  margin: 0;
+  font-family: 'Cormorant Garamond', 'Helvetica Neue', serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: black;
+  font-size: 17px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h5 {
+  font-family: 'Rye', cursive;
+  font-weight: normal;
+}
+
+/* These should be in the theme, but writing directly to save time */
+h1 {
+  font-size: 30px;
+  margin-top: 0;
+  text-transform: uppercase;
+}
+h2 {
+  font-size: 22px;
+  margin-top: 0;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+h3 {
+  font-size: 18px;
+  margin-top: 0;
+}
+
+fieldset {
+  border: 0;
+  padding: 0;
+}
+
+a {
+  color: #3c4446;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+.App {
+  background-color: #e8ddc8;
+  min-height: 100vh;
+  color: #1d0e00;
+  display: flex;
+  flex-direction: column;
+}

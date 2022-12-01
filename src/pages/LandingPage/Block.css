@@ -1,0 +1,25 @@
+.Block {
+    height: 300px;
+
+}
+
+.BlockCenteredText {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    color: white;
+}
+
+.Block__Text {
+    width: 100%;
+}
+
+.Block__TextDark {
+    color: #5e340c;
+}
+
+.BlockImg {
+    height: 100%;
+    max-width: 100%;
+}
