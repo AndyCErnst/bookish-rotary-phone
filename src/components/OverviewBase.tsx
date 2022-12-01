@@ -9,7 +9,7 @@ interface OverviewBaseProps {
 export const OverviewBase = ({title, sections}: OverviewBaseProps) => {
     return (
         <article>
-            <T variant="h3" component="h1" sx={{marginBottom: 3}}>{title}</T>
+            <T variant="h3" component="h1" sx={{marginBottom: 3, textAlign: 'center'}}>{title}</T>
             <Topic sections={sections} />
         </article>
     )

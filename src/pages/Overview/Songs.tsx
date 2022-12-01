@@ -5,6 +5,8 @@ import { Category } from 'types'
 import { BroadsidesOfDay } from './BroadsidesOfDay'
 import { OverviewBase } from 'components/OverviewBase'
 import { ClickableImage } from 'components/ClickableImage'
+import SongTopics from 'images/viz/SongsPoems_topics.png'
+import SongCloud from 'images/viz/SongsPoems_wordcloudBrown.png'
 
 export const Songs = () => {
   const params = useParams<{ topic: Category }>()
@@ -30,26 +32,20 @@ export const Songs = () => {
           12,
         ],
         [
-          <Post>
-            <ClickableImage name="viz/SongsPoems_topics.png" />
+          <Post title="Song and Poem Topics">
+            <ClickableImage src={SongTopics} />
           </Post>,
           8,
         ],
         [<BroadsidesOfDay topic={params.topic!} />, 4],
         [
-          <Post>
-            <ClickableImage name="broadsides/74407662.3.jpg" />
-          </Post>,
-          4,
-        ],
-        [
-          <Post>
-            <ClickableImage name="viz/SongsPoems_wordcloud.png" />
+          <Post title="Most Common Words in Songs and Poems">
+            <ClickableImage src={SongCloud} />
           </Post>,
           12,
         ],
         [
-          <Post>
+          <Post title="">
             <ClickableImage name="broadsides/74412223.3.jpg" />
           </Post>,
           4,
