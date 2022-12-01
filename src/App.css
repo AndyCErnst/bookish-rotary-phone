@@ -21,6 +21,14 @@ body {
   line-height: 1.5;
 }
 
+main {
+  padding-top: 32px;
+  padding-bottom: 32px;
+  background-image: url('./images/bg/fullbg.jpeg');
+  background-position-x: center;
+  background-size: cover;
+}
+
 h2,h3,h4,h5,h6 {
   font-family: 'Vollkorn SC', serif;
   font-weight: normal;

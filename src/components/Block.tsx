@@ -65,12 +65,12 @@ export const ImageBlock = ({
   alt: string
   color?: Color
 }) => (
-  <Block sx={{ backgroundColor: mapColor(color) }}>
+  <Block sx={{ ...BlockCSS, backgroundColor: mapColor(color) }}>
     {
       <img
         src={src}
         alt={alt}
-        style={{ height: BlockCSS.height, maxWidth: '100%' }}
+        style={{ maxWidth: '100%', height: '100%' }}
       />
     }
   </Block>

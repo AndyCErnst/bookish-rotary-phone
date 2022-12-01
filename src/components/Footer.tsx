@@ -17,7 +17,7 @@ export function Footer() {
   return (
     <Box
       component="footer"
-      sx={{ backgroundColor: colors.yellowed, marginTop: 4 }}
+      sx={{ backgroundColor: colors.yellowed }}
     >
       <Box sx={{ py: 2, textAlign: 'center', textTransform: 'uppercase', borderTop: border, borderBottom: border }}>
         <T variant="h6" component="div">

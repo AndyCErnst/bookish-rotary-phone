@@ -9,13 +9,11 @@ export const MainLayout = () => (
   <>
     <Nav />
     <ScrollToTop />
-    <Container
-      maxWidth="lg"
-      classes={{ root: 'containerRoot' }}
-      component="main"
-    >
-      <Outlet />
-    </Container>
+    <main role="main">
+      <Container maxWidth="lg" classes={{ root: 'containerRoot' }}>
+        <Outlet />
+      </Container>
+    </main>
     <Footer />
   </>
 )
