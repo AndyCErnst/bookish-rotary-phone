@@ -19,7 +19,6 @@ export const Nav = () => {
         </Link>
       </h1>
       <ul className="Nav">
-        <NLink to="/" text="Main" />
         <TopicMenu />
         <NLink to="/map" text="Map" />
         <NLink to="/summary" text="About broadsides" />
