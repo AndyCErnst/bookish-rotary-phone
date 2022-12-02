@@ -5,11 +5,12 @@ import { Category } from 'types'
 import { BroadsidesOfDay } from './BroadsidesOfDay'
 import { OverviewBase } from 'components/OverviewBase'
 import { ClickableImage } from 'components/ClickableImage'
+import { Player } from 'components/AudioPlayer'
 import SongTopics from 'images/viz/SongsPoems_topics.png'
 import SongCloud from 'images/viz/SongsPoems_wordcloudBrown.png'
-// import Auld from 'audio/Auld\ Lang\ Syne.mp3'
-// import Rocky from 'audio/The Rocky Road to Dublin.mp3' 
-// import Whiskey from 'audio/Whiskey in the Jar.mp3'
+import Auld from 'audio/Auld Lang Syne.mp3'
+import Rocky from 'audio/The Rocky Road to Dublin.mp3'
+import Whiskey from 'audio/Whiskey in the Jar.mp3'
 
 export const Songs = () => {
   const params = useParams<{ topic: Category }>()
@@ -50,6 +51,24 @@ export const Songs = () => {
         [
           <Post title="">
             <ClickableImage name="broadsides/74412223.3.jpg" />
+          </Post>,
+          4,
+        ],
+        [
+          <Post title="Auld Lang Syne">
+            <Player src={Auld} />
+          </Post>,
+          4,
+        ],
+        [
+          <Post title="The Rocky Road to Dublin">
+            <Player src={Rocky} />
+          </Post>,
+          4,
+        ],
+        [
+          <Post title="Whiskey in the Jar">
+            <Player src={Whiskey} />
           </Post>,
           4,
         ],

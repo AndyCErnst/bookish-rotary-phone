@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react'
+import { Stack, Box } from 'MUI'
+import PlayCircle from '@mui/icons-material/PlayCircle'
+import PauseCircle from '@mui/icons-material/PauseCircle'
+import { keyboardAction } from 'utils/a11yUtils'
 
-const useAudio = (url: string): [boolean, VoidFunction] => {
-  const [audio] = useState(new Audio(url))
+const useAudio = (src: string): [boolean, VoidFunction] => {
+  const [audio] = useState(new Audio(src))
   const [playing, setPlaying] = useState(false)
 
   const toggle: VoidFunction = () => setPlaying(!playing)
@@ -20,12 +24,22 @@ const useAudio = (url: string): [boolean, VoidFunction] => {
   return [playing, toggle]
 }
 
-const Player = ({ url }: { url: string }) => {
-  const [playing, toggle] = useAudio(url)
+const IconSizes = { fontSize: '160px' }
+export const Player = ({ src }: { src: string }) => {
+  const [playing, toggle] = useAudio(src)
 
   return (
-    <div>
-      <button onClick={toggle}>{playing ? 'Pause' : 'Play'}</button>
-    </div>
+    <Stack
+      aria-label={playing ? 'Pause' : 'Play'}
+      onClick={toggle}
+      onKeyPress={keyboardAction(toggle)}
+      role="button"
+      tabIndex={0}
+      sx={{ minHeight: '300px', backgroundColor: '#999', borderRadius: '10px' }}
+      justifyContent="center"
+      alignItems="center"
+    >
+      {playing ? <PauseCircle sx={IconSizes} /> : <PlayCircle sx={IconSizes} />}
+    </Stack>
   )
 }
