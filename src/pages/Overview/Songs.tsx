@@ -41,7 +41,15 @@ export const Songs = () => {
           </Post>,
           8,
         ],
-        [<BroadsidesOfDay topic={params.topic!} />, 4],
+        [
+          <Stack spacing={2}>
+            <BroadsidesOfDay topic={params.topic!} />
+            <Post title="The Rocky Road to Dublin">
+              <Player src={Rocky} />
+            </Post>
+          </Stack>,
+          4,
+        ],
         [
           <Post title="Most Common Words in Songs and Poems">
             <ClickableImage src={SongCloud} />
@@ -60,12 +68,7 @@ export const Songs = () => {
           </Post>,
           4,
         ],
-        [
-          <Post title="The Rocky Road to Dublin">
-            <Player src={Rocky} />
-          </Post>,
-          4,
-        ],
+
         [
           <Post title="Whiskey in the Jar">
             <Player src={Whiskey} />

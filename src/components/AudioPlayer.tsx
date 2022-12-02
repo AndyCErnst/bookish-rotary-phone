@@ -37,7 +37,7 @@ export const Player = ({ src }: { src: string }) => {
       role="button"
       tabIndex={0}
       sx={{
-        minHeight: '300px',
+        minHeight: '200px',
         backgroundColor: '#999',
         borderRadius: '10px',
         color: colors.slate,
