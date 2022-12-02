@@ -8,6 +8,15 @@ const h1Font = 'Rye, cursive'
 const headingFont = 'Vollkorn SC, cursive'
 const bodyFont = 'Vesper Libre, Helvetica Neue, serif'
 
+// Quick fix for buttons and links that aren't keyboard accessible
+// document.addEventListener('keypress', (e: KeyboardEvent) =>{
+//   // @ts-ignore
+//   if([' ', 'Return'].includes(e.key) && ['button', 'menuitem'].includes(e.target?.role)) {
+//     console.log('Keyboard click on ', e.target)
+//     // @ts-ignore
+//     e.target?.click()
+//   }
+// })
 // https://mui.com/material-ui/customization/theming/
 export const theme: ThemeOptions = createTheme({
   components: {

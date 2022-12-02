@@ -4,8 +4,6 @@ import { Box, Menu, MenuItem, Tooltip } from 'MUI'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import { catsList } from 'types'
 import { getRandomBroadside } from 'utils/randomGenerator'
-import ImgText from '../images/banner/broadsides.svg'
-import ImgShadow from '../images/banner/shadow.svg'
 import SearchIcon from '@mui/icons-material/Search'
 
 import './Nav.css'
@@ -14,16 +12,17 @@ export const Nav = () => {
   const { id } = useParams<{ id: string }>()
   return (
     <nav className="NavContainer">
-      <h1 className="NavTitle">
+      <div className="NavTitle__Container">
         <Link to="/" className="NavTitle__Link">
-          <img alt="Broadsides" src={ImgShadow} />
-          <img alt="" src={ImgText} className="NavTitle__Text" />
+          <h1 className="NavTitle__Text">Scottish Broadsides</h1>
         </Link>
-      </h1>
+      </div>
       <ul className="Nav">
         <NLink to="/summary" text="About broadsides" />
         <TopicMenu />
         <NLink to="/map" text="Map" />
+        <NLink to="/now" text="Then vs Now" />
+        <NLink to="/our-work" text="Our Work" />
         <NavLink
           key={id}
           to={`/broadsides/${getRandomBroadside().id}`}
@@ -31,7 +30,6 @@ export const Nav = () => {
         >
           Random Broadside
         </NavLink>
-        <NLink to="/our-work" text="Our Work" />
         <NLink
           to="/search"
           text={
@@ -70,7 +68,7 @@ const TopicMenu = () => {
         className={'Nav_link'}
       >
         Topics
-        <KeyboardArrowDownIcon />
+        <KeyboardArrowDownIcon sx={{verticalAlign: 'middle'}}/>
       </div>
       <Menu
         id="basic-menu"
@@ -83,7 +81,7 @@ const TopicMenu = () => {
       >
         {catsList.map((cat) => (
           <MenuItem key={cat}>
-            <MenuLink to={`/topic/${cat}`} text={cat} />
+            <MenuLink to={`/topic/${cat}`} text={cat} onClick={handleClose} />
           </MenuItem>
         ))}
       </Menu>
@@ -109,9 +107,10 @@ const NLink = ({
     </NavLink>
   </li>
 )
-const MenuLink = ({ to, text }: { to: string; text: string }) => (
+const MenuLink = ({ to, text, onClick }: { to: string; text: string, onClick: VoidFunction }) => (
   <NavLink
     to={to}
+    onClick={onClick}
     className={({ isActive, isPending }) =>
       [
         'Nav_link',
