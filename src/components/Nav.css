@@ -54,6 +54,7 @@
   font-family: 'Vollkorn SC', serif;
   text-transform: none;
   display: inline-block;
+  color: #5e340c;
 }
 
 .Nav_link:hover,
@@ -66,6 +67,6 @@
   cursor: default;
 }
 
-.Nav_link.noUnderline {
-  text-decoration: none;
+.menuLink {
+  font-family: 'Vesper Libre', serif;
 }

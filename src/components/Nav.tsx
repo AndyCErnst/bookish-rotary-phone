@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Link, NavLink, useParams } from 'react-router-dom'
 import { Button, Box, Menu, MenuItem, Tooltip } from 'MUI'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
-import { catsList } from 'types'
+import { Category } from 'types'
 import { getRandomBroadside } from 'utils/randomGenerator'
 import SearchIcon from '@mui/icons-material/Search'
 
@@ -76,25 +76,33 @@ const TopicMenu = () => {
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}
+        onClick={handleClose}
         MenuListProps={{
           'aria-labelledby': 'topic-menu',
         }}
       >
-        {catsList.map((cat) => (
-          <MenuItem key={cat}>
-            <NavLink
-              to={`/topic/${cat}`}
-              onClick={handleClose}
-              className={'Nav_link noUnderline'}
-            >
-              {cat}
-            </NavLink>
-          </MenuItem>
-        ))}
+        <CatLink cat="murder" text="Murder" />
+        <CatLink cat="trials" text="Trials" />
+        <CatLink cat="courtship" text="Love and Courtship" />
+        <CatLink cat="songs and poems" text="Songs and Poems" />
       </Menu>
     </>
   )
 }
+
+const CatLink = ({
+  cat,
+  text,
+}: {
+  cat: Category
+  text: string
+}) => (
+  <MenuItem>
+    <NavLink to={`/topic/${cat}`} className={'Nav_link menuLink'}>
+      {text}
+    </NavLink>
+  </MenuItem>
+)
 
 const NLink = ({
   to,
