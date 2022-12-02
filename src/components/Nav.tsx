@@ -13,9 +13,13 @@ export const Nav = () => {
   return (
     <nav className="NavContainer">
       <div className="NavTitle__Container">
-        <Link to="/" className="NavTitle__Link">
-          <h1 className="NavTitle__Text">Scottish Broadsides</h1>
-        </Link>
+        <div className="NavTitle__LinkWrapper">
+          <div className='DottedLine top'/>
+          <Link to="/" className="NavTitle__Link">
+            <h1 className="NavTitle__Text">Scottish Broadsides</h1>
+          </Link>
+          <div className='DottedLine bottom'/>
+        </div>
       </div>
       <ul className="Nav">
         <NLink to="/summary" text="About broadsides" />
@@ -90,13 +94,7 @@ const TopicMenu = () => {
   )
 }
 
-const CatLink = ({
-  cat,
-  text,
-}: {
-  cat: Category
-  text: string
-}) => (
+const CatLink = ({ cat, text }: { cat: Category; text: string }) => (
   <MenuItem>
     <NavLink to={`/topic/${cat}`} className={'Nav_link menuLink'}>
       {text}
