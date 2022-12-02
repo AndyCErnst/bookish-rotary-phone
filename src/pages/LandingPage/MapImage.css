@@ -1,9 +1,6 @@
-.MapImage {
-  position: relative;
-}
-
 .MapImage__Image {
-    max-width: 100%;
+  height: auto;
+  width: 100%;
 }
 .MapImage__Text {
   position: absolute;

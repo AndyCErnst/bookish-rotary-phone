@@ -1,6 +1,6 @@
 export const colors: Record<string, string> = {
   white: '#ffffff',
-  yellowed: '#f8f8ea',
+  yellowed: '#fcf9f0',
   rust: '#ac4807',
   slate: '#2d2d2d',
   oldpaper: '#e8ddc8',

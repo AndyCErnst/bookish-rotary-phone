@@ -39,7 +39,7 @@ export const ColoredBlock = ({
         padding: 3,
         color: darkText ? colors.coffee : colors.white,
         wordBreak: 'break-word',
-        textDecorationColor: 'currentcolor'
+        textDecorationColor: 'currentcolor',
       }}
     >
       {children}
@@ -65,7 +65,11 @@ export const TitleBlock = ({
   )
   return (
     <ColoredBlock {...props}>
-        <Box component={Link} to={to}  sx={{color: props.darkText ? colors.coffee : colors.white}}>
+      <Box
+        component={Link}
+        to={to}
+        sx={{ color: props.darkText ? colors.coffee : colors.white }}
+      >
         <Stack justifyContent="space-between" sx={{ height: '100%' }}>
           <div>
             {Title}
@@ -76,8 +80,8 @@ export const TitleBlock = ({
             <ArrowOutward sx={{ fontSize: 18, verticalAlign: 'middle' }} />
           </Box>
         </Stack>
-    </Box>
-      </ColoredBlock>
+      </Box>
+    </ColoredBlock>
   )
 }
 
@@ -87,12 +91,30 @@ export const ImageBlock = ({
   src,
   alt,
   color = 'white',
+  expand = false,
 }: {
   src: string
   alt: string
   color?: Color
+  expand?: boolean
 }) => (
-  <Block sx={{ ...BlockCSS, backgroundColor: mapColor(color) }}>
-    {<img src={src} alt={alt} style={{ maxWidth: '100%', height: '100%' }} />}
-  </Block>
+  <Stack
+    sx={{
+      ...BlockCSS,
+      width: 'auto',
+      height: expand ? 'auto' : BlockCSS.height,
+      backgroundColor: mapColor(color),
+      padding: 1,
+    }}
+    justifyContent="center"
+    alignItems="center"
+  >
+    {
+      <img
+        src={src}
+        alt={alt}
+        style={{ height: '100%', width: '100%', objectFit: 'contain' }}
+      />
+    }
+  </Stack>
 )

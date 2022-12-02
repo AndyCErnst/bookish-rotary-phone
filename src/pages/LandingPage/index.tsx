@@ -8,11 +8,15 @@ import {
 } from 'components/Block'
 import { colors } from 'utils/color'
 import Song from 'images/song.png'
-import Ballad from 'images/ballads.png'
-import Courtship from 'images/courtship.png'
+import Courtship from 'images/deco/courtship/courtship.png'
+import SongEmbrace from 'images/deco/songs/songEmbrace.png'
+import Harps from 'images/deco/songs/harps.png'
+import Skelly from 'images/deco/misc/skelly.png'
+import Laughing from 'images/deco/misc/laughing.png'
+import Reading from 'images/deco/misc/reading.png'
 import Hanging1 from 'images/hanging.png'
 import Hanging2 from 'images/hanging2.png'
-import Assault from 'images/assault.png'
+import Assault from 'images/deco/misc/assault.png'
 import Newspaper from 'images/modern newspaper.png'
 import { MapImage } from './MapImage'
 import './index.css'
@@ -44,8 +48,7 @@ export const LandingPage = () => {
           alignItems="center"
           sx={{ height: '100%', fontSize: '70px', textAlign: 'center' }}
         >
-          1650-
-          1910
+          1650- 1910
         </T>
       </ColoredBlock>,
       3,
@@ -56,7 +59,7 @@ export const LandingPage = () => {
     [
       <TitleBlock
         to="/summary"
-        color="white"
+        color="yellowed"
         title={'What are the Scottish Broadsides?'}
         darkText
       >
@@ -70,18 +73,21 @@ export const LandingPage = () => {
     ],
     [<ImageBlock src={Song} alt="Ink printing of man playing bagpipes" />, 3],
     [<TitleBlock to="/topic/courtship" color="tan" title={'Courtship'} />, 3],
-    [<NullBlock />, 6],
+    [
+      <ImageBlock
+        src={SongEmbrace}
+        alt="Ink printing a man and woman embracing"
+      />,
+      3,
+    ],
+    [<NullBlock />, 3],
     [
       <TitleBlock to="/topic/songs and poems" color="coffee" title={'Songs'} />,
       3,
     ],
     [<NullBlock />, 3],
     [
-      <ImageBlock
-        src={Ballad}
-        alt="Drawing of a poor victorian man holding a newspaper"
-        color="oldpaper"
-      />,
+      <ImageBlock src={Harps} alt="Ink print of two harps" color="oldpaper" />,
       3,
     ],
     [
@@ -91,8 +97,15 @@ export const LandingPage = () => {
       />,
       3,
     ],
-    [<MapImage />, 9], //   need to style this down in size
-    [<NullBlock />, 3],
+    [<MapImage />, 9],
+    [
+      <ImageBlock
+        src={Skelly}
+        alt="Ink print of a human skeleton lying in the ground"
+        expand
+      />,
+      3,
+    ],
     [<NullBlock />, 3],
     [
       <ImageBlock
@@ -125,10 +138,26 @@ export const LandingPage = () => {
       />,
       6,
     ],
-    [<NullBlock />, 9],
-    [<TitleBlock to="/now" color="rust" title={'What about now?'} />, 3],
-    [<NullBlock />, 9],
-    [<ImageBlock src={Newspaper} alt="A modern newspaper" />, 3],
+    [
+      <ImageBlock
+        src={Laughing}
+        alt="Ink printing of a man and children gathered around a large music machine"
+        expand
+      />,
+      6,
+    ],
+    [
+      <ImageBlock src={Reading} alt="Ink printing of a man eagerly reading" />,
+      3,
+    ],
+    [
+      <Stack>
+        <TitleBlock to="/now" color="rust" title={'What about now?'} />
+        <ImageBlock src={Newspaper} alt="A modern newspaper" />
+      </Stack>,
+      3,
+    ],
+    [<NullBlock />, 12],
   ]
   return (
     <article className="LandingPage">
