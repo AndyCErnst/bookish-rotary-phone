@@ -16,6 +16,7 @@
   text-shadow: 8px 0px #5e340c;
   padding: 24px 8px;
   line-height: 1.2;
+  font-family: 'Rye', 'Vollkorn SC', cursive;
 }
 @media all and (min-width: 1000px) {
   .NavTitle__Text {

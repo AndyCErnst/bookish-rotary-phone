@@ -29,14 +29,14 @@ main {
   background-size: cover;
 }
 
-h2,h3,h4,h5,h6 {
+h1,h2,h3,h4,h5,h6 {
   font-family: 'Vollkorn SC', serif;
   font-weight: normal;
 }
 
 /* These should be in the theme, but writing directly to save time */
 h1 {
-  font-family: 'Rye', 'Vollkorn SC', cursive;
+  /* font-family: 'Rye', 'Vollkorn SC', cursive; */
   font-weight: normal;
   font-size: 48px;
   text-transform: uppercase;

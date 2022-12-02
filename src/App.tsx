@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider, Route } from 'react-router-dom'
 import { createTheme, ThemeOptions, ThemeProvider } from '@mui/material/styles'
 import { router } from './Routes/index'
-
+import { colors } from 'utils/color'
 import './App.css'
 
 const h1Font = 'Rye, cursive'
@@ -49,12 +49,15 @@ export const theme: ThemeOptions = createTheme({
       fontFamily: headingFont,
     },
     h1: {
-      fontFamily: h1Font,
-      fontSize: '48px'
+      fontFamily: headingFont,
+      fontSize: '48px',
+      marginBottom: '20px',
+      color: colors.coffee,
     },
     h2: {
       fontFamily: headingFont,
-      fontSize: '28px'
+      fontSize: '28px',
+      marginBottom: '8px',
     },
     h3: {
       fontFamily: headingFont,
