@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link, NavLink, useParams } from 'react-router-dom'
-import { Box, Menu, MenuItem, Tooltip } from 'MUI'
+import { Button, Box, Menu, MenuItem, Tooltip } from 'MUI'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import { catsList } from 'types'
 import { getRandomBroadside } from 'utils/randomGenerator'
@@ -56,6 +56,7 @@ const TopicMenu = () => {
   }
   return (
     <>
+      {/* MAJOR A11Y issue here, this must be fixed */}
       <div
         role="button"
         tabIndex={0}
@@ -68,7 +69,7 @@ const TopicMenu = () => {
         className={'Nav_link'}
       >
         Topics
-        <KeyboardArrowDownIcon sx={{verticalAlign: 'middle'}}/>
+        <KeyboardArrowDownIcon sx={{ verticalAlign: 'middle' }} />
       </div>
       <Menu
         id="basic-menu"
@@ -81,7 +82,13 @@ const TopicMenu = () => {
       >
         {catsList.map((cat) => (
           <MenuItem key={cat}>
-            <MenuLink to={`/topic/${cat}`} text={cat} onClick={handleClose} />
+            <NavLink
+              to={`/topic/${cat}`}
+              onClick={handleClose}
+              className={'Nav_link noUnderline'}
+            >
+              {cat}
+            </NavLink>
           </MenuItem>
         ))}
       </Menu>
@@ -106,19 +113,4 @@ const NLink = ({
       {text}
     </NavLink>
   </li>
-)
-const MenuLink = ({ to, text, onClick }: { to: string; text: string, onClick: VoidFunction }) => (
-  <NavLink
-    to={to}
-    onClick={onClick}
-    className={({ isActive, isPending }) =>
-      [
-        'Nav_link',
-        isActive || isPending ? 'Nav_link--active' : '',
-        'noUnderline',
-      ].join(' ')
-    }
-  >
-    {text}
-  </NavLink>
 )

@@ -1,13 +1,13 @@
-/* These don't work somehow */
+/* These aren't directly usable */
 :root {
   -—white: #ffffff;
   --yellowed: #f8f8ea;
-  -—rust: #ac4807;
-  -—slate: #2d2d2d;
   -—oldpaper: #e8ddc8;
   -—tan: #dca76e;
-  -—leather: #ca7b1d;
+  -—leather: #cc964b;
+  -—rust: #ac4807;
   -—coffee: #5e340c;
+  -—slate: #2d2d2d;
   --blackish: #1d0e00;
 }
 
@@ -36,7 +36,7 @@ h2,h3,h4,h5,h6 {
 
 /* These should be in the theme, but writing directly to save time */
 h1 {
-  font-family: 'Rye', cursive;
+  font-family: 'Rye', 'Vollkorn SC', cursive;
   font-weight: normal;
   font-size: 48px;
   text-transform: uppercase;

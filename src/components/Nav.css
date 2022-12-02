@@ -64,7 +64,6 @@
 
 .Nav_link.Nav_link--active {
   cursor: default;
-  /* text-decoration: none; */
 }
 
 .Nav_link.noUnderline {

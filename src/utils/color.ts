@@ -5,7 +5,7 @@ export const colors: Record<string, string> = {
   slate: '#2d2d2d',
   oldpaper: '#e8ddc8',
   tan: '#dca76e',
-  leather: '#ca7b1d',
+  leather: '#cc964b',
   coffee: '#5e340c',
   blackish: '#1d0e00',
 }
