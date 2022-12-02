@@ -3,6 +3,7 @@ import { Stack, Box } from 'MUI'
 import PlayCircle from '@mui/icons-material/PlayCircle'
 import PauseCircle from '@mui/icons-material/PauseCircle'
 import { keyboardAction } from 'utils/a11yUtils'
+import { colors } from 'utils/color'
 
 const useAudio = (src: string): [boolean, VoidFunction] => {
   const [audio] = useState(new Audio(src))
@@ -35,7 +36,12 @@ export const Player = ({ src }: { src: string }) => {
       onKeyPress={keyboardAction(toggle)}
       role="button"
       tabIndex={0}
-      sx={{ minHeight: '300px', backgroundColor: '#999', borderRadius: '10px' }}
+      sx={{
+        minHeight: '300px',
+        backgroundColor: '#999',
+        borderRadius: '10px',
+        color: colors.slate,
+      }}
       justifyContent="center"
       alignItems="center"
     >
