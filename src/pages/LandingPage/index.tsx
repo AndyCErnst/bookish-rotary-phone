@@ -57,7 +57,7 @@ export const LandingPage = () => {
       <TitleBlock
         to="/summary"
         color="white"
-        title={'Brief Introduction'}
+        title={'What are the Scottish Broadsides?'}
         darkText
       >
         Broadsides are single sided newspaper sheets posted in public places and

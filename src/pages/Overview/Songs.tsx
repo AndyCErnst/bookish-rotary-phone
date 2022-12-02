@@ -7,6 +7,9 @@ import { OverviewBase } from 'components/OverviewBase'
 import { ClickableImage } from 'components/ClickableImage'
 import SongTopics from 'images/viz/SongsPoems_topics.png'
 import SongCloud from 'images/viz/SongsPoems_wordcloudBrown.png'
+// import Auld from 'audio/Auld\ Lang\ Syne.mp3'
+// import Rocky from 'audio/The Rocky Road to Dublin.mp3' 
+// import Whiskey from 'audio/Whiskey in the Jar.mp3'
 
 export const Songs = () => {
   const params = useParams<{ topic: Category }>()
