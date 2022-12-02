@@ -2,10 +2,17 @@ import { Stack, Grid } from 'MUI'
 import { useParams } from 'react-router-dom'
 import { Post } from 'components/Post'
 import { Category } from 'types'
-import { Topic } from 'components/TopicSections'
+import { ImageBlock } from 'components/Block'
+import { FlourishBreak } from 'components/Break'
 import { BroadsidesOfDay } from './BroadsidesOfDay'
 import { OverviewBase } from 'components/OverviewBase'
 import { ClickableImage } from 'components/ClickableImage'
+import Courtship1 from 'images/deco/courtship/74407740.3.jpg'
+import Courtship2 from 'images/deco/courtship/74411271.3.jpg'
+import Courtship3 from 'images/deco/courtship/74414359.3.jpg'
+import Courtship4 from 'images/deco/courtship/74414467.3.jpg'
+import Courtship5 from 'images/deco/courtship/74417183.3.jpg'
+import Courtship6 from 'images/deco/courtship/74417183.31.jpg'
 
 export const Courtship = () => {
   const params = useParams<{ topic: Category }>()
@@ -40,6 +47,13 @@ export const Courtship = () => {
           7,
         ],
         [<BroadsidesOfDay topic={params.topic!} />, 4],
+        [<FlourishBreak />, 12],
+        [<ImageBlock src={Courtship1} alt="" />, 4],
+        [<ImageBlock src={Courtship2} alt="" />, 4],
+        [<ImageBlock src={Courtship3} alt="" />, 4],
+        [<ImageBlock src={Courtship4} alt="" />, 4],
+        [<ImageBlock src={Courtship5} alt="" />, 4],
+        [<ImageBlock src={Courtship6} alt="" />, 4],
       ]}
     />
   )

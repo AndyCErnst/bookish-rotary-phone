@@ -2,15 +2,24 @@ import { Stack, Grid } from 'MUI'
 import { useParams } from 'react-router-dom'
 import { Post } from 'components/Post'
 import { Category } from 'types'
+import { ImageBlock } from 'components/Block'
 import { BroadsidesOfDay } from './BroadsidesOfDay'
 import { OverviewBase } from 'components/OverviewBase'
 import { ClickableImage } from 'components/ClickableImage'
 import { Player } from 'components/AudioPlayer'
-import SongTopics from 'images/viz/SongsPoems_topics.png'
-import SongCloud from 'images/viz/SongsPoems_wordcloudBrown.png'
 import Auld from 'audio/Auld Lang Syne.mp3'
 import Rocky from 'audio/The Rocky Road to Dublin.mp3'
 import Whiskey from 'audio/Whiskey in the Jar.mp3'
+import SongTopics from 'images/viz/SongsPoems_topics.png'
+import SongCloud from 'images/viz/SongsPoems_wordcloudBrown.png'
+import Song1 from 'images/deco/songs/74407637.3.jpg'
+import Song2 from 'images/deco/songs/74408612.3.jpg'
+import Song3 from 'images/deco/songs/74408634.3.jpg'
+import Song4 from 'images/deco/songs/74411291.3.jpg'
+import Song5 from 'images/deco/songs/74414463.3.jpg'
+import Song6 from 'images/deco/songs/74417558.3.jpg'
+import Song7 from 'images/deco/songs/74417569.3.jpg'
+import { FloralBreak } from 'components/Break'
 
 export const Songs = () => {
   const params = useParams<{ topic: Category }>()
@@ -43,18 +52,23 @@ export const Songs = () => {
         ],
         [
           <Stack spacing={2}>
-            <BroadsidesOfDay topic={params.topic!} />
+            <ImageBlock src={Song1} alt="" />
             <Post title="The Rocky Road to Dublin">
               <Player src={Rocky} />
             </Post>
           </Stack>,
           4,
         ],
+        [<FloralBreak />, 12],
+        [<BroadsidesOfDay topic={params.topic!} />, 4],
         [
-          <Post title="Most Common Words in Songs and Poems">
-            <ClickableImage src={SongCloud} />
-          </Post>,
-          12,
+          <Stack spacing={2}>
+            <ImageBlock src={Song2} alt="" />{' '}
+            <Post title="Auld Lang Syne">
+              <Player src={Auld} />
+            </Post>
+          </Stack>,
+          4,
         ],
         [
           <Post title="">
@@ -63,10 +77,10 @@ export const Songs = () => {
           4,
         ],
         [
-          <Post title="Auld Lang Syne">
-            <Player src={Auld} />
+          <Post title="Most Common Words in Songs and Poems">
+            <ClickableImage src={SongCloud} />
           </Post>,
-          4,
+          12,
         ],
 
         [
@@ -75,6 +89,12 @@ export const Songs = () => {
           </Post>,
           4,
         ],
+
+        [<ImageBlock src={Song3} alt="" />, 4],
+        [<ImageBlock src={Song4} alt="" />, 4],
+        [<ImageBlock src={Song5} alt="" />, 8],
+        [<ImageBlock src={Song6} alt="" />, 4],
+        [<ImageBlock src={Song7} alt="" />, 4],
       ]}
     />
   )
