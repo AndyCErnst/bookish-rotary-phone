@@ -6,7 +6,7 @@ interface Props {
 }
 
 export const TimeControl = ({ timeRange, setTimeRange }: Props) => {
-  const min = 1643
+  const min = 1650
   const max = 1910
   const marks = [
     { value: min, label: min },

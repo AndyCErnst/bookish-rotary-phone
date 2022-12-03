@@ -9,7 +9,7 @@ export const MainLayout = () => (
   <>
     <Nav />
     <ScrollToTop />
-    <main role="main">
+    <main role="main" className="Main">
       <Container maxWidth="lg" classes={{ root: 'containerRoot' }}>
         <Outlet />
       </Container>

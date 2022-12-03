@@ -91,7 +91,7 @@ export const Songs = () => {
         ],
 
         [<ImageBlock src={Song3} alt="" />, 4],
-        [<ImageBlock src={Song4} alt="" />, 4],
+        [<ImageBlock src={Song4} alt="" fit />, 4],
         [<ImageBlock src={Song5} alt="" />, 8],
         [<ImageBlock src={Song6} alt="" />, 4],
         [<ImageBlock src={Song7} alt="" />, 4],

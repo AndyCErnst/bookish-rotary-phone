@@ -12,7 +12,6 @@ import Courtship2 from 'images/deco/courtship/74411271.3.jpg'
 import Courtship3 from 'images/deco/courtship/74414359.3.jpg'
 import Courtship4 from 'images/deco/courtship/74414467.3.jpg'
 import Courtship5 from 'images/deco/courtship/74417183.3.jpg'
-import Courtship6 from 'images/deco/courtship/74417183.31.jpg'
 
 export const Courtship = () => {
   const params = useParams<{ topic: Category }>()
@@ -53,7 +52,6 @@ export const Courtship = () => {
         [<ImageBlock src={Courtship3} alt="" />, 4],
         [<ImageBlock src={Courtship4} alt="" />, 4],
         [<ImageBlock src={Courtship5} alt="" />, 4],
-        [<ImageBlock src={Courtship6} alt="" />, 4],
       ]}
     />
   )

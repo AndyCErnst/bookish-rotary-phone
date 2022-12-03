@@ -14,6 +14,7 @@ import { Button } from 'MUI'
 import { Broadside, Location, LatLon } from 'types'
 import { locationMap } from 'data'
 import { ShowAllButton } from './ShowAllButton'
+import { colors } from 'utils/color'
 import './Map.css'
 
 type Coordinates = [number, number]
@@ -63,7 +64,7 @@ const Map = ({
         map.panTo(coord)
       }
     },
-    [selectedLocation],
+    [selectedLocation]
   )
 
   return (
@@ -100,8 +101,19 @@ interface AreaCircleProps {
   selected: boolean
 }
 
-const bubbleStyles = { fillColor: 'blue', color: 'blue' }
-const bubbleStylesSelected = { fillColor: 'green', color: 'green' }
+const bubbleStyles = {
+  fillColor: colors.oldpaper,
+  color: colors.coffee,
+  fillOpacity: 0.6,
+  weight: 3,
+}
+const bubbleStylesSelected = {
+  fillColor: '#ffece0',
+  color: colors.rust,
+  fillOpacity: 0.8,
+  weight: 3,
+  className: 'bubble'
+}
 
 const AreaCircle = ({
   placename,
@@ -124,7 +136,7 @@ const AreaCircle = ({
         click: (e) => onClick(placename, e.latlng),
       }}
     >
-      <Tooltip direction="bottom" offset={[0, radius]} opacity={1}>
+      <Tooltip direction="bottom" offset={[0, radius]} opacity={1} className="tooltip">
         {placename} ({count})
       </Tooltip>
     </CircleMarker>

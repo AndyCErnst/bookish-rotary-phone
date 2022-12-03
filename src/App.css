@@ -6,6 +6,7 @@
   -—tan: #dca76e;
   -—leather: #cc964b;
   -—rust: #ac4807;
+  --coco: #895F19;
   -—coffee: #5e340c;
   -—slate: #2d2d2d;
   --blackish: #1d0e00;
@@ -21,23 +22,16 @@ body {
   line-height: 1.5;
 }
 
-main {
-  padding-top: 32px;
-  padding-bottom: 32px;
-  background-image: url('./images/bg/fullbg.jpeg');
-  background-position-x: center;
-  background-size: cover;
-}
-
 h1,h2,h3,h4,h5,h6 {
   font-family: 'Vollkorn SC', serif;
   font-weight: normal;
+  color: #895F19;
 }
 
 /* These should be in the theme, but writing directly to save time */
 h1 {
   font-weight: normal;
-  font-size: 48px;
+  font-size: 42px;
   text-transform: uppercase;
   margin-bottom: 20px;
   margin-top: 0;

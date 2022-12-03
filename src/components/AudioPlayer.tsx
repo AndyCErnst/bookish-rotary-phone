@@ -14,6 +14,9 @@ const useAudio = (src: string): [boolean, VoidFunction] => {
 
   useEffect(() => {
     playing ? audio.play() : audio.pause()
+    return () => {
+      if(playing) audio.pause()
+    }
   }, [playing])
 
   useEffect(() => {

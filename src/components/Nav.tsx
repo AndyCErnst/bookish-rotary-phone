@@ -39,7 +39,7 @@ export const Nav = () => {
           text={
             <Box sx={{ height: 2 }}>
               <Tooltip title="Search">
-                <SearchIcon />
+                <SearchIcon aria-label="Search"/>
               </Tooltip>
             </Box>
           }

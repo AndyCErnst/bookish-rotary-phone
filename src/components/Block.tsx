@@ -92,11 +92,13 @@ export const ImageBlock = ({
   alt,
   color = 'white',
   expand = false,
+  fit = false,
 }: {
   src: string
   alt: string
   color?: Color
   expand?: boolean
+  fit?: boolean
 }) => (
   <Stack
     sx={{
@@ -104,7 +106,6 @@ export const ImageBlock = ({
       width: 'auto',
       height: expand ? 'auto' : BlockCSS.height,
       backgroundColor: mapColor(color),
-      padding: 1,
     }}
     justifyContent="center"
     alignItems="center"
@@ -113,7 +114,7 @@ export const ImageBlock = ({
       <img
         src={src}
         alt={alt}
-        style={{ height: '100%', width: '100%', objectFit: 'contain' }}
+        style={{ height: '100%', width: '100%', objectFit: fit ? 'contain' : 'cover' }}
       />
     }
   </Stack>

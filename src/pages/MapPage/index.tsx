@@ -101,6 +101,7 @@ export const MapView = () => {
 
   return (
     <section className={'MapPage'}>
+      <T variant="h1" sx={{marginBottom: 4}}>Where were the Broadsides?</T>
       <Grid container spacing={2}>
         <Grid xs={12} md={4}>
           <FilterControl

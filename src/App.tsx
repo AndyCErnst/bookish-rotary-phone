@@ -50,18 +50,20 @@ export const theme: ThemeOptions = createTheme({
     },
     h1: {
       fontFamily: headingFont,
-      fontSize: '48px',
+      fontSize: '42px',
       marginBottom: '20px',
-      color: colors.coffee,
+      color: colors.coco,
     },
     h2: {
       fontFamily: headingFont,
       fontSize: '28px',
       marginBottom: '8px',
+      color: colors.coco,
     },
     h3: {
       fontFamily: headingFont,
-      fontSize: '18px'
+      fontSize: '18px',
+      color: colors.coco,
     },
     button: {
       fontWeight: 'bold'

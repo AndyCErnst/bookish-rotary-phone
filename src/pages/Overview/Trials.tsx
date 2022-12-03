@@ -55,8 +55,8 @@ export const Trials = () => {
           4,
         ],
         [<ImageBlock src={Trial3} alt="" />, 4],
-        [<ImageBlock src={Trial4} alt="" />, 4],
         [<ImageBlock src={Trial5} alt="" />, 4],
+        [<ImageBlock src={Trial4} alt="" expand />, 4],
         [<ImageBlock src={Trial6} alt="" />, 4],
       ]}
     />

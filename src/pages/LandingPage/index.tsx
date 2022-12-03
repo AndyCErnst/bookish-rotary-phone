@@ -87,7 +87,7 @@ export const LandingPage = () => {
     ],
     [<NullBlock />, 3],
     [
-      <ImageBlock src={Harps} alt="Ink print of two harps" color="oldpaper" />,
+      <ImageBlock src={Harps} alt="Ink print of two harps" color="oldpaper" fit />,
       3,
     ],
     [

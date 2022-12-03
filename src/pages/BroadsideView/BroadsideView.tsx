@@ -4,6 +4,7 @@ import { broadsides } from 'data'
 import { ClickableImage } from 'components/ClickableImage'
 import { Vote } from 'components/Vote'
 import { ErrorPage } from 'pages/ErrorPage/ErrorPage'
+import { Page } from 'layouts/Page'
 import './BroadsideView.css'
 
 export const BroadsideView = () => {
@@ -15,9 +16,8 @@ export const BroadsideView = () => {
   const { title, text, year, categories, image } = broadsides[id]
 
   return (
-    <article className="Broadside">
-      <h2>{title}</h2>
-      <Stack direction="row" spacing="2" justifyContent={"space-between"}>
+    <Page title={title}>
+      <Stack direction="row" spacing="2" justifyContent={'space-between'}>
         <div>
           <strong>{year}</strong>
           <br />
@@ -33,9 +33,12 @@ export const BroadsideView = () => {
       <Stack direction="row" className="Broadside__container" spacing={2}>
         <div className="Broadside__body">{text}</div>
         <div className="imageContainer">
-          <ClickableImage name={'broadsides/'+image} alt={`Broadside titled ${title}`} />
+          <ClickableImage
+            name={'broadsides/' + image}
+            alt={`Broadside titled ${title}`}
+          />
         </div>
       </Stack>
-    </article>
+    </Page>
   )
 }

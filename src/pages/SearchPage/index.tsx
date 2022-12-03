@@ -8,11 +8,13 @@ import './Search.css'
 export const Search = () => {
   const [searchTerm, setSearchTerm] = useState('')
   const lowerSearch = searchTerm.toLowerCase()
+  
   const matching = broadsidesList.filter(
     (bs) =>
       bs.text.toLowerCase().includes(lowerSearch) ||
       bs.title.toLowerCase().includes(lowerSearch)
   )
+
   return (
     <article className="SearchPage">
       <Stack spacing={2} padding={4}>
