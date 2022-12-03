@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { Stack, Button, Tooltip } from 'MUI'
-import Cry from '../images/cry.svg'
-import Laugh from '../images/laugh.svg'
-import Heart from '../images/heart.svg'
+import Cry from '../images/icons/cry.svg'
+import Laugh from '../images/icons/laugh.svg'
+import Heart from '../images/icons/heart.svg'
 import { Reaction } from 'types'
 import './Vote.css'
 

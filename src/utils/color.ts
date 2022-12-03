@@ -1,13 +1,14 @@
 export const colors: Record<string, string> = {
   white: '#ffffff',
   yellowed: '#fcf9f0',
-  rust: '#ac4807',
-  darkrust: '#8f3d06',
-  slate: '#2d2d2d',
   oldpaper: '#e8ddc8',
   tan: '#dca76e',
   leather: '#cc964b',
+  rust: '#ac4807',
+  darkrust: '#8f3d06',
+  coco: '#895F19',
   coffee: '#5e340c',
+  slate: '#2d2d2d',
   blackish: '#1d0e00',
 }
 export type Color = keyof typeof colors

@@ -1,44 +1,87 @@
-import { Stack } from 'MUI'
-import { Post } from 'components/Post'
-import { OverviewBase } from 'components/OverviewBase'
-import { ClickableImage } from 'components/ClickableImage'
-import { Vote } from 'components/Vote'
-import Love from 'images/now/LoveandCourtship_ModernDay.jpeg'
-import Murder from 'images/now/Murder_ModernDay.jpeg'
-import SongsBs from 'images/now/SongsAndPoems_Broadside.jpg'
-import Songs from 'images/now/SongsandPoems_ModernDay.jpg'
-import Trials from 'images/now/Trials_ModernDay.png'
+import { T, Grid, Box } from 'MUI'
+import { Page } from 'layouts/Page'
+import { Row, ThenAndNow } from './Row'
+import Now1 from './images/now1.jpeg'
+import Now2 from './images/now2.jpeg'
+import Now3 from './images/now3.jpeg'
+import Now4 from './images/now4.jpeg'
+import Now5 from './images/now5.jpeg'
+import Now6 from './images/now6.jpeg'
+import Now7 from './images/now7.jpeg'
+import Then1 from './images/then1.jpeg'
+import Then2 from './images/then2.jpeg'
+import Then3 from './images/then3.jpeg'
+import Then4 from './images/then4.jpeg'
+import Then5 from './images/then5.jpeg'
+import Then6 from './images/then6.jpeg'
+import Then7 from './images/then7.jpeg'
 
 export const Now = () => {
   return (
-    <OverviewBase
-      title="What About Now?"
-      sections={[
-        [
-          <Post>
-            Broadsides became less popular over time in favour of other news
-            sources such as the modern broadsheet newspaper. Recently, people
-            are more likely to obtain news via mobile apps and social media.
-            Despite this, the format in which news stories are displayed has not
-            changed a huge amount, apart from the switch from paper to screen.
-            Shocking titles and eye-catching images are still used to attract
-            the reader's attention. Additionally, publication of non-factual
-            news stories or 'fake news' is a phenomenon that has remained
-            throughout history. However, in the Broadsides these exist as
-            obvious jokes or parodies, compared to social media where fake news
-            stories are much more widespread and harder to differentiate from
-            the truth.
-            <br />
-            <br />
-            The key themes that we picked out from the Broadsides,
-            reflecting the interests of the people at the time, show that as a
-            society the things that peak our interests have not changed too much
-            over the past 400 years:
-          </Post>,
-          12,
-        ],
-        [
-          <Post title="Murder">
+    <>
+      <Page title="Broadsides Then and Now">
+        <Box component="p" sx={{ marginBottom: 6 }}>
+          For over 300 years, the public relied on street literature to find out
+          what was going on, the most popular form of which was the 'Broadside'-
+          the tabloid of the day. Over time, Broadsides have evolved into
+          newspapers, which then onto the internet and today's social media. The
+          following but are people so different between then and now? Many of
+          the topics of yore mirror what's popular today as well.
+        </Box>
+
+        <Grid container spacing={{xs: 1, md:4}} sx={{ overflowY: 'hidden' }}>
+          <ThenAndNow />
+          <Row title="Medium" left={Then1} leftAlt="" right={Now1} rightAlt="">
+            Nowadays, people are more likely to find their news on mobile apps
+            and social media. Despite this, the shape of the new page has not
+            changed much, only now it's pixels instead of ink.
+          </Row>
+
+          <Row
+            title="Aethetics"
+            left={Then2}
+            leftAlt=""
+            right={Now2}
+            rightAlt=""
+          >
+            Early Broadsides were usually printed in black ink, with later ones
+            sometimes using two colors. The rare illustration were usually cheap
+            woodblock prints used over and over, even the broadside bore no
+            relation to the picture. However, news aesthetics in the digital age
+            has undergone major changes. With the change in technology, people
+            have come to expect colorful information, engaging typography,
+            pictures, video, and integrated social media.
+          </Row>
+          <Row
+            title="Information"
+            left={Then3}
+            leftAlt=""
+            right={Now3}
+            rightAlt=""
+          >
+            Publication of non-factual news stories or 'fake news' is a
+            phenomenon with a long history. However, in many Broadsides the
+            'fake news' are clearly jokes and parodies, unlike modern social
+            media where fake news stories are more widespread and harder to
+            distinguish from truth.
+          </Row>
+        </Grid>
+
+        <Box sx={{ marginTop: 12, marginBottom: 8 }}>
+          <T variant="h1" component="h2">
+            Themes Then and Now
+          </T>
+          <p>
+            The key themes from the Broadsides, were murder, trials, love, and
+            songs. These themes reflect the interests of the people at the time
+            and show that as a society the things that peak our interests have
+            not changed too much over the past 400 years:
+          </p>
+        </Box>
+
+        <Grid container spacing={4} sx={{ overflowY: 'hidden' }}>
+          <ThenAndNow />
+          <Row title="Murder" left={Then4} leftAlt="" right={Now4} rightAlt="">
             The most talked about topic throughout the Broadsides was murder.
             Not only were they obsessed with it, but it was also a much more
             common artefact in their lifestyle. Additionally, especially in the
@@ -47,13 +90,8 @@ export const Now = () => {
             We obsess over serial killers, reflected in the viewer ratings of
             the latest Netflix documentary, or the popularity of the most recent
             true crime podcast.
-          </Post>,
-          8,
-        ],
-        [<ClickableImage src={Murder} />, 4],
-        [<ClickableImage src={Trials} />, 4],
-        [
-          <Post title="Trials">
+          </Row>
+          <Row title="Trial" left={Then5} leftAlt="" right={Now5} rightAlt="">
             Trials were another hot topic in the Broadsides, this is
             unsurprising due to their intrinsic link to murder. Trials occurred
             for all matter of sins, often ending in execution or transportation
@@ -61,11 +99,14 @@ export const Now = () => {
             and carry sentences that are less life-threatening, big trials are
             still documented by the media with utmost scrutiny (cue 'Wagatha
             Christie').
-          </Post>,
-          8,
-        ],
-        [
-          <Post title="Love and Courtship">
+          </Row>
+          <Row
+            title="Love and Courtship"
+            left={Then6}
+            leftAlt=""
+            right={Now6}
+            rightAlt=""
+          >
             Broadsides included love letters and wedding announcements, as well
             as details of murderous lovers and affairs. As they were written and
             published more locally than today's global news platforms the reader
@@ -77,34 +118,28 @@ export const Now = () => {
             although people from the 1700s might not be bothered by the concept
             of 'Married at First Sight', I am sure that they would be more than
             a little taken aback at the prospect of 'Naked Attraction'.
-          </Post>,
-          8,
-        ],
-        [<ClickableImage src={Love} />, 4],
-        [
-          <Stack>
-            <ClickableImage src={SongsBs} />
-            <ClickableImage src={Songs} />
-          </Stack>,
-          4,
-        ],
-        [
-          <Post title="Songs and Poems">
-            Songs and poems are of course timeless, but what also has not
-            changed over the past 400 years is the use of songs and poems to not
-            only share messages of romance, but also to share important messages
-            throughout the community. At the time of the Broadsides, not
-            everyone would have been literate, and therefore important messages
-            would have to be communicated by word of mouth, and we all know that
-            a song is much more likely to get stuck in our heads! We found
-            Broadsides in our collection containing songs about both Cholera and
-            Cholic, and we cannot ignore the similarities that these have with
-            modern day viral dance videos being used to spread messages about
-            topics such as Covid on social media..
-          </Post>,
-          8,
-        ],
-      ]}
-    />
+          </Row>
+          <Row
+            title="Songs and Poems"
+            left={Then7}
+            leftAlt=""
+            right={Now7}
+            rightAlt=""
+          >
+            Songs and poems are timeless, but what also has not changed over the
+            past 400 years is the use of songs and poems to not only share
+            messages of romance, but also to share important messages throughout
+            the community. At the time of the Broadsides, not everyone would
+            have been literate so important messages would have to be shared by
+            word of mouth, and we all know that a song is much more likely to
+            get stuck in our heads! We found Broadsides in our collection
+            containing songs about both Cholera and Cholic, and we cannot ignore
+            the similarities that these have with modern day viral dance videos
+            being used to spread messages about topics such as Covid on social
+            media.
+          </Row>
+        </Grid>
+      </Page>
+    </>
   )
 }

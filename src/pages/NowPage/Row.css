@@ -1,0 +1,16 @@
+.Row {
+    position: relative;
+}
+.Row:before {
+    content: '';
+    height: 2000px;
+    border-left: 1px solid #5e340c;
+    position: absolute;
+    left: 50%;
+    top: 32px;
+}
+@media all and (max-width: 899px) {
+    .Row:before {
+        display: none;
+    }
+}
