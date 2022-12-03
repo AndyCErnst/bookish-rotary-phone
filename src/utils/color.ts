@@ -12,3 +12,9 @@ export const colors: Record<string, string> = {
 }
 export type Color = keyof typeof colors
 export const mapColor = (color: Color) => colors[color] || ''
+
+export const fonts = {
+  title: 'Rye, cursive',
+  heading: 'Vollkorn SC, cursive',
+  body: 'Vesper Libre, Helvetica N,eue, serif',
+}

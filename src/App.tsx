@@ -1,12 +1,10 @@
 import { createBrowserRouter, RouterProvider, Route } from 'react-router-dom'
 import { createTheme, ThemeOptions, ThemeProvider } from '@mui/material/styles'
 import { router } from './Routes/index'
-import { colors } from 'utils/color'
+import { colors, fonts } from 'utils/color'
 import './App.css'
 
-const h1Font = 'Rye, cursive'
-const headingFont = 'Vollkorn SC, cursive'
-const bodyFont = 'Vesper Libre, Helvetica Neue, serif'
+
 
 // Quick fix for buttons and links that aren't keyboard accessible
 // document.addEventListener('keypress', (e: KeyboardEvent) =>{
@@ -44,24 +42,24 @@ export const theme: ThemeOptions = createTheme({
     },
   },
   typography: {
-    fontFamily: bodyFont,
+    fontFamily: fonts.body,
     subtitle1: {
-      fontFamily: headingFont,
+      fontFamily: fonts.heading,
     },
     h1: {
-      fontFamily: headingFont,
+      fontFamily: fonts.heading,
       fontSize: '42px',
       marginBottom: '20px',
       color: colors.coco,
     },
     h2: {
-      fontFamily: headingFont,
+      fontFamily: fonts.heading,
       fontSize: '28px',
       marginBottom: '8px',
       color: colors.coco,
     },
     h3: {
-      fontFamily: headingFont,
+      fontFamily: fonts.heading,
       fontSize: '18px',
       color: colors.coco,
     },
