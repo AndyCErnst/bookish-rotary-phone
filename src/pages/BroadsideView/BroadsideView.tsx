@@ -16,7 +16,7 @@ export const BroadsideView = () => {
   const { title, text, year, categories, image } = broadsides[id]
 
   return (
-    <Page title={title}>
+    <Page title={title} smallHeading>
       <Stack direction="row" spacing="2" justifyContent={'space-between'}>
         <div>
           <strong>{year}</strong>
