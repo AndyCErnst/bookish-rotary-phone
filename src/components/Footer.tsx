@@ -3,7 +3,7 @@ import { colors } from 'utils/color'
 
 export function Footer() {
   const today = new Date()
-  const border = '2px solid ' + colors.coffee
+  const border = '1px solid ' + colors.coffee
   return (
     <Box component="footer" sx={{ backgroundColor: colors.white }}>
       <Box

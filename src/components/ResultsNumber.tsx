@@ -1,4 +1,4 @@
-import { Box } from 'MUI'
+import { T } from 'MUI'
 
 export const ResultsNumber = ({
   matching,
@@ -16,8 +16,8 @@ export const ResultsNumber = ({
     filters ? 'for these filters' : '',
   ].join(' ')
   return (
-    <Box sx={{ py: 2 }}>
-      <div>{numberDisplay}</div>
-    </Box>
+    <T sx={{ py: 2 }} variant="h3" component="div">
+      {numberDisplay}
+    </T>
   )
 }

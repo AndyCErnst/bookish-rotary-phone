@@ -1,6 +1,7 @@
 import { useState, useCallback, useMemo, useEffect } from 'react'
 import { Category } from 'types'
 import { Grid, Container, Stack, T } from 'MUI'
+import { Page } from 'layouts/Page'
 import { ArticleList } from 'components/ArticleList'
 import { ResultsNumber } from 'components/ResultsNumber'
 import { broadsidesList } from 'data'
@@ -8,7 +9,6 @@ import { Location, catsList, Broadside } from 'types'
 import { MapWrapper } from './Map'
 import { FilterControl } from './FilterControls'
 import { TimeControl } from './TimeControl'
-import './index.css'
 
 const initialTimeRange: [number, number] = [1643, 1910]
 const timeRangeIsInitial = (timeRange: [number, number]) =>
@@ -100,8 +100,7 @@ export const MapView = () => {
   )
 
   return (
-    <section className={'MapPage'}>
-      <T variant="h1" sx={{marginBottom: 4}}>Where were the Broadsides?</T>
+    <Page title="Where were the Broadsides?">
       <Grid container spacing={2}>
         <Grid xs={12} md={4}>
           <FilterControl
@@ -125,17 +124,24 @@ export const MapView = () => {
         resetFilters={filtering ? resetFilters : undefined}
       />
       <section>
-        <Stack>
-        <T variant="h3" sx={{marginTop: 4}}>Matching Broadsides</T>
+        <Stack
+          flexDirection="row"
+          alignItems="flex-end"
+          justifyContent="space-between"
+          sx={{ marginTop: 6, marginBottom: 2 }}
+        >
+          <T variant="h2" >
+            Matching Broadsides
+          </T>
           <ResultsNumber
             matching={listed}
             location={location}
             filters={filtering}
           />
-
-          <ArticleList articles={listed} />
         </Stack>
+
+        <ArticleList articles={listed} />
       </section>
-    </section>
+    </Page>
   )
 }
