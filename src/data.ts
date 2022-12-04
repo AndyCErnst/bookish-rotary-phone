@@ -2,7 +2,6 @@ import data from './data.json'
 import { Broadside, LocationMap } from 'types'
 
 export const broadsides = data as Record<string, Broadside>
-console.log(Object.keys(data))
 
 // duplicate of 74459027
 delete broadsides[74459028]
@@ -11,7 +10,7 @@ delete broadsides[74459006]
 delete broadsides[74459007]
 // duplicate of 74459081
 delete broadsides[74459082]
-// dupicates of 74459259
+// duplicates of 74459259
 delete broadsides[74459260]
 delete broadsides[74459258]
 

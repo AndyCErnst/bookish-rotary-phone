@@ -11,7 +11,7 @@ import {
   Tooltip,
 } from 'react-leaflet'
 import { Button } from 'MUI'
-import { Broadside, Location, LatLon } from 'types'
+import {  Location, LatLon } from 'types'
 import { locationMap } from 'data'
 import { ShowAllButton } from './ShowAllButton'
 import { colors } from 'utils/color'
@@ -102,17 +102,20 @@ interface AreaCircleProps {
 }
 
 const bubbleStyles = {
-  fillColor: colors.oldpaper,
-  color: colors.coffee,
-  fillOpacity: 0.6,
+  // fillColor: colors.oldpaper,
+  // color: colors.coffee,
+  fillColor: 'forestgreen',
+  color: 'forestgreen',
+  fillOpacity: 0.4,
   weight: 3,
 }
 const bubbleStylesSelected = {
-  fillColor: '#ffece0',
-  color: colors.rust,
-  fillOpacity: 0.8,
+  // fillColor: '#ffece0',
+  // color: colors.rust,
+  fillColor: 'cornflowerblue',
+  color: 'cornflowerblue',
+  // fillOpacity: 0.8,
   weight: 3,
-  className: 'bubble'
 }
 
 const AreaCircle = ({

@@ -17,6 +17,13 @@ interface Props {
   setNoneCat: (on: boolean) => void
 }
 
+const labelMap: Record<Category, string> = {
+  'songs and poems': 'Songs and Poems',
+  murder: 'Murder',
+  trials: 'Trials',
+  courtship: 'Love and Courtship'
+}
+
 export const FilterControl = ({ setCats, activeCats, noneCat, setNoneCat }: Props) => {
   const onClick = useCallback(
     (cat: Category) => () => {
@@ -44,7 +51,7 @@ export const FilterControl = ({ setCats, activeCats, noneCat, setNoneCat }: Prop
                     onChange={onClick(cat)}
                   />
                 }
-                label={cat}
+                label={labelMap[cat]}
               />
             ))}
             <FormControlLabel
@@ -54,7 +61,7 @@ export const FilterControl = ({ setCats, activeCats, noneCat, setNoneCat }: Prop
                     onChange={() => setNoneCat(!noneCat)}
                   />
                 }
-                label={'none'}
+                label={'None'}
               />
           </FormGroup>
         </fieldset>
