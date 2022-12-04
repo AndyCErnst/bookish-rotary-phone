@@ -5,7 +5,7 @@ import HomeIcon from '@mui/icons-material/Home'
 export const ShowAllButton = () => {
   const map = useMap()
   const showAllScotland = () => {
-    map.setView({ lat: 55.9491414, lng: -3.1805859 }, 7)
+    map.setView({ lat: 56.51707901932375, lng: -3.5815429687500004 }, 7)
   }
   return (
     <IconButton

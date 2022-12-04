@@ -196,7 +196,6 @@ const MapEvents = () => {
       setPosition(map.getCenter())
     },
     zoomend: () => {
-      console.log(map.getZoom())
       setZoom(map.getZoom())
     }
   })
