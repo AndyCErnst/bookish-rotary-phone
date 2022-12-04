@@ -41,13 +41,15 @@ export const theme: ThemeOptions = createTheme({
         },
       },
     },
-    // MuiTooltip: {
-    //   styleOverrides: {
-    //     popper: {
-    //       fontSize: '106px'
-    //     }
-    //   }
-    // }
+    MuiSlider: {
+      styleOverrides: {
+        valueLabel: {
+          backgroundColor: colors.oldpaper,
+          color: colors.rust,
+          fontSize: 18
+        }
+      }
+    }
   },
   palette: {
     primary: {

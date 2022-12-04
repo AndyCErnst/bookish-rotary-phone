@@ -12,7 +12,9 @@ import Courtship3 from 'images/deco/courtship/74414359.3.jpg'
 import Courtship4 from 'images/deco/courtship/74414467.3.jpg'
 import Courtship5 from 'images/deco/courtship/74417183.3.jpg'
 import CourtLoc from 'images/viz/Courtship-Locations Plot.png'
-import CourtWords from 'images/viz/Love_Words.png'
+import CourtTopics from 'images/viz/CourtshipPopularTopics.png'
+import CourtWords from 'images/viz/Courtship-Words.png'
+
 
 export const Courtship = () => {
   const params = useParams<{ topic: Category }>()
@@ -38,13 +40,19 @@ export const Courtship = () => {
           <Post>
             <ClickableImage src={CourtLoc} />
           </Post>,
-          6,
+          12,
+        ],
+        [
+          <Post>
+            <ClickableImage src={CourtTopics} />
+          </Post>,
+          12,
         ],
         [
           <Post>
             <ClickableImage src={CourtWords} />
           </Post>,
-          6,
+          12,
         ],
         [<BroadsidesOfDay topic={params.topic!} />, 4],
         [<FlourishBreak />, 12],
