@@ -2,34 +2,34 @@ import { useCallback } from 'react'
 import {
   MapContainer,
   TileLayer,
-  Marker,
-  Popup,
   LayerGroup,
   CircleMarker,
-  useMapEvents,
   useMap,
   Tooltip,
   ZoomControl,
 } from 'react-leaflet'
-import { Button } from 'MUI'
-import { Location, LatLon } from 'types'
+import { Button, T, Box } from 'MUI'
+import { Location, LatLon, Category } from 'types'
 import { locationMap } from 'data'
 import { ShowAllButton } from './ShowAllButton'
 import { colors } from 'utils/color'
 import './Map.css'
+import { countReset } from 'console'
 
+export type CatSum = Record<Category | 'total', number>
 type Coordinates = [number, number]
 
 // Edinburgh
 const startingPosition: Coordinates = [55.9491414, -3.1805859]
 
 interface MapProps {
-  locationCounts: Record<Location, number>
+  locationCounts: Record<Location, CatSum>
   selectedLocation: Location | undefined
   onSelectLocation: (name: Location | undefined) => void
   resetFilters?: () => void
 }
 
+// Wrapper and Map are separated so Map can use the leaflet hooks while in content
 export const MapWrapper = (props: MapProps) => {
   return (
     <div>
@@ -77,7 +77,7 @@ const Map = ({
           <AreaCircle
             key={place}
             placename={place as Location}
-            count={locationCounts[place as Location]}
+            counts={locationCounts[place as Location]}
             onClick={clickButton}
             selected={place === selectedLocation}
           />
@@ -105,7 +105,7 @@ const Map = ({
 
 interface AreaCircleProps {
   placename: Location
-  count: number
+  counts: CatSum
   onClick: (place: string, latlng: LatLon) => void
   selected: boolean
 }
@@ -129,7 +129,7 @@ const bubbleStylesSelected = {
 
 const AreaCircle = ({
   placename,
-  count,
+  counts,
   onClick,
   selected,
 }: AreaCircleProps) => {
@@ -137,8 +137,15 @@ const AreaCircle = ({
     console.error('no ' + placename + ' in location map')
     return null
   }
+  const {
+    total,
+    murder,
+    trials,
+    courtship,
+    ['songs and poems']: songs,
+  } = counts
   const { lat, lng } = locationMap[placename]
-  const radius = normalizeSize(count)
+  const radius = normalizeSize(total)
   return (
     <CircleMarker
       center={[lat, lng]}
@@ -154,7 +161,17 @@ const AreaCircle = ({
         opacity={1}
         className="tooltip"
       >
-        {placename} ({count})
+        <Box padding={1}>
+        <T variant="h3" >
+          {placename} ({total})
+        </T>
+        <T variant="h4" component="ul" marginTop={1} padding={0} sx={{listStyle: 'none' }}>
+          {murder ? <li>Murder ({murder})</li> : null}
+          {trials ? <li>Trials ({trials})</li> : null}
+          {courtship ? <li>Love and Courtship ({courtship})</li> : null}
+          {songs ? <li>Songs and Poems ({songs})</li> : null}
+        </T>
+        </Box>
       </Tooltip>
     </CircleMarker>
   )

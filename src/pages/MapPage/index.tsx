@@ -1,16 +1,22 @@
 import { useState, useCallback, useMemo, useEffect } from 'react'
 import { Category } from 'types'
-import { Grid, Box, Stack, T } from 'MUI'
+import { Box, Stack, T } from 'MUI'
 import { Page } from 'layouts/Page'
 import { ArticleList } from 'components/ArticleList'
 import { ResultsNumber } from 'components/ResultsNumber'
 import { broadsidesList } from 'data'
 import { Location, catsList, Broadside } from 'types'
-import { colors } from 'utils/color'
-import { MapWrapper } from './Map'
+import { MapWrapper, CatSum } from './Map'
 import { FilterControl } from './FilterControls'
 import { TimeControl } from './TimeControl'
 
+const defaultTopicCount: CatSum = {
+  'songs and poems': 0,
+  murder: 0,
+  trials: 0,
+  courtship: 0,
+  total: 0,
+}
 const initialTimeRange: [number, number] = [1643, 1910]
 const timeRangeIsInitial = (timeRange: [number, number]) =>
   timeRange[0] === initialTimeRange[0] && timeRange[1] === initialTimeRange[1]
@@ -47,7 +53,6 @@ const matchesCats = (
   return true
 }
 
-
 export const MapView = () => {
   const [activeCats, setCats] = useState<Category[]>(catsList)
   const [noneCat, setNoneCat] = useState<boolean>(true)
@@ -62,7 +67,8 @@ export const MapView = () => {
     setLocation(undefined)
   }, [])
 
-  // If the interaction starts getting slow, refactor to a debounce
+  // Filter by time and category.
+  // Note: If the interaction starts getting slow, refactor to a debounce
   // and update the map with a delay.
   const current = useMemo(() => {
     return broadsidesList.filter((bs) => {
@@ -82,17 +88,21 @@ export const MapView = () => {
     })
   }, [activeCats, noneCat, timeRange])
 
+  // Do this before filtering by location so unselected locations still appear on the map
   const locationCounts = useMemo(
     () =>
       current.reduce((acc, bs) => {
         bs.locations.forEach((loc) => {
-          acc[loc] = (acc[loc] ?? 0) + 1
+          acc[loc] = acc[loc] ?? { ...defaultTopicCount }
+          acc[loc].total++
+          bs.categories.forEach((cat) => acc[loc][cat]++)
         })
         return acc
-      }, {} as Record<Location, number>),
+      }, {} as Record<Location, CatSum>),
     [current]
   )
 
+  // Filter results by location
   const listed = useMemo(
     () =>
       location
@@ -102,7 +112,16 @@ export const MapView = () => {
   )
 
   return (
-    <Page title="Where were the Broadsides?">
+    <Page title="Where Were the Broadsides?">
+      <p>
+        This interactive map shows where in Scotland you could find Broadsides.
+        Specifically, this indicates the locations mentioned in the text of
+        Broadsides, as the location published and sold are difficult to know
+        accurately. The size of each circle represents the number of mentions of
+        each location. You can filter by year or by category and see the map
+        change. A Broadside will appear in each location it mentions.
+      </p>
+
       <Box sx={{ position: 'relative' }}>
         <FilterControl
           setCats={setCats}

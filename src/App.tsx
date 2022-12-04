@@ -64,17 +64,24 @@ export const theme: ThemeOptions = createTheme({
       fontSize: '42px',
       marginBottom: '20px',
       color: colors.coco,
+      textTransform: 'none',
     },
     h2: {
       fontFamily: fonts.heading,
       fontSize: '28px',
       marginBottom: '8px',
       color: colors.coco,
+      textTransform: 'none',
     },
     h3: {
       fontFamily: fonts.heading,
       fontSize: '18px',
       color: colors.coco,
+    },
+    h4: {
+      fontFamily: fonts.heading,
+      fontSize: '14px',
+      lineHeight: 1.5
     },
     button: {
       fontWeight: 'bold',
