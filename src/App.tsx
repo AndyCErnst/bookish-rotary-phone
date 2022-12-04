@@ -1,5 +1,6 @@
-import { createBrowserRouter, RouterProvider, Route } from 'react-router-dom'
+import { RouterProvider } from 'react-router-dom'
 import { createTheme, ThemeOptions, ThemeProvider } from '@mui/material/styles'
+import { MapContextProvider} from 'contexts/MapContext'
 import { router } from './Routes/index'
 import { colors, fonts } from 'utils/color'
 import './App.css'
@@ -93,7 +94,9 @@ function App() {
   return (
     <div className="App">
       <ThemeProvider theme={theme}>
+        <MapContextProvider>
         <RouterProvider router={router} />
+        </MapContextProvider>
       </ThemeProvider>
     </div>
   )

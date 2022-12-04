@@ -1,4 +1,4 @@
-import { useCallback } from 'react'
+import { useCallback, useContext, useEffect, useState } from 'react'
 import {
   MapContainer,
   TileLayer,
@@ -7,20 +7,17 @@ import {
   useMap,
   Tooltip,
   ZoomControl,
+  useMapEvents,
 } from 'react-leaflet'
 import { Button, T, Box } from 'MUI'
 import { Location, LatLon, Category } from 'types'
 import { locationMap } from 'data'
+import { MapContext } from 'contexts/MapContext'
 import { ShowAllButton } from './ShowAllButton'
 import { colors } from 'utils/color'
 import './Map.css'
-import { countReset } from 'console'
 
 export type CatSum = Record<Category | 'total', number>
-type Coordinates = [number, number]
-
-// Edinburgh
-const startingPosition: Coordinates = [55.9491414, -3.1805859]
 
 interface MapProps {
   locationCounts: Record<Location, CatSum>
@@ -31,12 +28,13 @@ interface MapProps {
 
 // Wrapper and Map are separated so Map can use the leaflet hooks while in content
 export const MapWrapper = (props: MapProps) => {
+  const {position, zoom} = useContext(MapContext)
   return (
     <div>
       <MapContainer
         className="mapContainer"
-        center={startingPosition}
-        zoom={13}
+        center={position}
+        zoom={zoom}
         scrollWheelZoom={false}
         zoomControl={false}
       >
@@ -44,6 +42,7 @@ export const MapWrapper = (props: MapProps) => {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
+        <MapEvents />
         <ZoomControl position="topright" />
         <Map {...props} />
       </MapContainer>
@@ -58,6 +57,7 @@ const Map = ({
   resetFilters,
 }: MapProps) => {
   const map = useMap()
+
   const clickButton = useCallback(
     (loc: string, coord: LatLon) => {
       if (loc === selectedLocation) {
@@ -162,15 +162,21 @@ const AreaCircle = ({
         className="tooltip"
       >
         <Box padding={1}>
-        <T variant="h3" >
-          {placename} ({total})
-        </T>
-        <T variant="h4" component="ul" marginTop={1} padding={0} sx={{listStyle: 'none' }}>
-          {murder ? <li>Murder ({murder})</li> : null}
-          {trials ? <li>Trials ({trials})</li> : null}
-          {courtship ? <li>Love and Courtship ({courtship})</li> : null}
-          {songs ? <li>Songs and Poems ({songs})</li> : null}
-        </T>
+          <T variant="h3">
+            {placename} ({total})
+          </T>
+          <T
+            variant="h4"
+            component="ul"
+            marginTop={1}
+            padding={0}
+            sx={{ listStyle: 'none' }}
+          >
+            {murder ? <li>Murder ({murder})</li> : null}
+            {trials ? <li>Trials ({trials})</li> : null}
+            {courtship ? <li>Love and Courtship ({courtship})</li> : null}
+            {songs ? <li>Songs and Poems ({songs})</li> : null}
+          </T>
         </Box>
       </Tooltip>
     </CircleMarker>
@@ -180,4 +186,19 @@ const AreaCircle = ({
 const normalizeSize = (size: number) => {
   const reduced = Math.sqrt(size) * 2.5 + 4
   return reduced < 7 ? 7 : reduced
+}
+
+
+const MapEvents = () => {
+  const {setPosition, setZoom} = useContext(MapContext)
+  const map = useMapEvents({
+    moveend: () => {
+      setPosition(map.getCenter())
+    },
+    zoomend: () => {
+      console.log(map.getZoom())
+      setZoom(map.getZoom())
+    }
+  })
+  return null
 }
