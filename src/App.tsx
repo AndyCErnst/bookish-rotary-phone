@@ -74,9 +74,10 @@ export const theme: ThemeOptions = createTheme({
     h2: {
       fontFamily: fonts.heading,
       fontSize: '28px',
-      marginBottom: '8px',
+      marginBottom: '16px',
       color: colors.coco,
       textTransform: 'none',
+      lineHeight: 1.2,
     },
     h3: {
       fontFamily: fonts.heading,
