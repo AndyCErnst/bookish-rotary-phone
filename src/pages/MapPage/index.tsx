@@ -6,6 +6,7 @@ import { ArticleList } from 'components/ArticleList'
 import { ResultsNumber } from 'components/ResultsNumber'
 import { broadsidesList } from 'data'
 import { Location, catsList, Broadside } from 'types'
+import { colors } from 'utils/color'
 import { MapWrapper } from './Map'
 import { FilterControl } from './FilterControls'
 import { TimeControl } from './TimeControl'
@@ -101,29 +102,36 @@ export const MapView = () => {
 
   return (
     <Page title="Where were the Broadsides?">
-      <Grid container spacing={2}>
-        <Grid xs={12} md={4}>
+      <Box sx={{ position: 'relative' }}>
+        <Box
+          sx={{
+            position: 'absolute',
+            bottom: '8px',
+            left: '8px',
+            zIndex: 1000,
+            backgroundColor: colors.yellowed,
+          }}
+        >
           <FilterControl
             setCats={setCats}
             activeCats={activeCats}
             noneCat={noneCat}
             setNoneCat={setNoneCat}
           />
-        </Grid>
-      </Grid>
-
-      <MapWrapper
-        locationCounts={locationCounts}
-        onSelectLocation={setLocation}
-        selectedLocation={location}
-        resetFilters={filtering ? resetFilters : undefined}
-      />
-      <Box sx={{marginTop: 6, px: 2}}>
+        </Box>
+        <MapWrapper
+          locationCounts={locationCounts}
+          onSelectLocation={setLocation}
+          selectedLocation={location}
+          resetFilters={filtering ? resetFilters : undefined}
+        />
+      </Box>
+      <Box sx={{ marginTop: 6, px: 2 }}>
         <TimeControl timeRange={timeRange} setTimeRange={setTimeRange} />
       </Box>
       <section>
         <Stack
-          flexDirection={{xs: 'column', md: "row"}}
+          flexDirection={{ xs: 'column', md: 'row' }}
           justifyContent="space-between"
           sx={{ marginTop: 6, marginBottom: 2 }}
         >

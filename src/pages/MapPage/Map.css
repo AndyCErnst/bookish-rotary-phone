@@ -15,24 +15,17 @@
     z-index: 1000;
 }
 
-.resetFiltersButton {
-    position: absolute !important;
-    bottom: 50px;
-    left: 8px;
-    z-index: 1000;
-}
-
 .leaflet-interactive:focus {
     outline: none;
-}
-
-.leaflet-control-container {
-    position: absolute;
-    right: 60px;
 }
 
 .tooltip {
     font-family: 'Vesper Libre', serif;
     font-size: 16px;
     color: #5e340c;
+}
+
+
+.leaflet-control-zoom-in:hover, .leaflet-control-zoom-out:hover {
+    text-decoration: none;
 }

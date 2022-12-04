@@ -21,10 +21,15 @@ const labelMap: Record<Category, string> = {
   'songs and poems': 'Songs and Poems',
   murder: 'Murder',
   trials: 'Trials',
-  courtship: 'Love and Courtship'
+  courtship: 'Love and Courtship',
 }
 
-export const FilterControl = ({ setCats, activeCats, noneCat, setNoneCat }: Props) => {
+export const FilterControl = ({
+  setCats,
+  activeCats,
+  noneCat,
+  setNoneCat,
+}: Props) => {
   const onClick = useCallback(
     (cat: Category) => () => {
       if (activeCats.includes(cat)) {
@@ -33,56 +38,38 @@ export const FilterControl = ({ setCats, activeCats, noneCat, setNoneCat }: Prop
         setCats([...activeCats, cat])
       }
     },
-    [activeCats],
+    [activeCats]
   )
+
+  const labelStyle = {justifyContent: 'space-between', marginLeft: 0, maxWidth: 130}
 
   return (
-    <fieldset>
-      <Stack spacing={2} direction="row" >
-        <fieldset>
-          <FormLabel component="legend">Filter by category</FormLabel>
-          <FormGroup row>
-            {catsList.map((cat) => (
-              <FormControlLabel
-                key={cat}
-                control={
-                  <Checkbox
-                    checked={activeCats.includes(cat)}
-                    onChange={onClick(cat)}
-                  />
-                }
-                label={labelMap[cat]}
+    <Stack margin={2} spacing={2} component="fieldset">
+      <FormLabel component="legend">Topics</FormLabel>
+      <FormGroup >
+        {catsList.map((cat) => (
+          <FormControlLabel
+          labelPlacement="start"
+          sx={labelStyle}
+            key={cat}
+            control={
+              <Checkbox
+                checked={activeCats.includes(cat)}
+                onChange={onClick(cat)}
               />
-            ))}
-            <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={noneCat}
-                    onChange={() => setNoneCat(!noneCat)}
-                  />
-                }
-                label={'None'}
-              />
-          </FormGroup>
-        </fieldset>
-      </Stack>
-    </fieldset>
+            }
+            label={labelMap[cat]}
+          />
+        ))}
+        <FormControlLabel
+        labelPlacement="start"
+        sx={labelStyle}
+          control={
+            <Checkbox checked={noneCat} onChange={() => setNoneCat(!noneCat)} />
+          }
+          label={'None'}
+        />
+      </FormGroup>
+    </Stack>
   )
 }
-
-// <Stack spacing={2} direction="row" sx={{marginX: 2}}>
-//       {catsList.map((cat) => {
-//         const active = activeCats.includes(cat)
-//         return (
-//         <Button
-//           onClick={onClick(cat)}
-//           key={cat}
-//           variant="contained"
-//           className={'Cat'}
-//           aria-active={active}
-//           color={active ? "secondary" : undefined}
-//         >
-//           {cat}
-//         </Button>
-//       )})}
-//     </Stack>

@@ -6,7 +6,6 @@
   -—tan: #dca76e;
   -—leather: #cc964b;
   -—rust: #ac4807;
-  --darkrust: #8f3d06;
   --coco: #895F19;
   -—coffee: #5e340c;
   -—slate: #2d2d2d;
@@ -29,7 +28,7 @@ h1,h2,h3,h4,h5,h6 {
   color: #895F19;
 }
 
-/* These should be in the theme, but writing directly to save time */
+/* These are also in the theme, but writing directly to save time */
 h1 {
   font-weight: normal;
   font-size: 42px;

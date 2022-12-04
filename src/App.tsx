@@ -4,8 +4,6 @@ import { router } from './Routes/index'
 import { colors, fonts } from 'utils/color'
 import './App.css'
 
-
-
 // Quick fix for buttons and links that aren't keyboard accessible
 // document.addEventListener('keypress', (e: KeyboardEvent) =>{
 //   // @ts-ignore
@@ -29,9 +27,17 @@ export const theme: ThemeOptions = createTheme({
         root: {
           fontFamily: fonts.heading,
           color: colors.blackish,
-        }
-      }
-    }
+          fontWeight: 'bold'
+        },
+      },
+    },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          borderRadius: 0,
+        },
+      },
+    },
     // MuiTooltip: {
     //   styleOverrides: {
     //     popper: {
@@ -71,8 +77,8 @@ export const theme: ThemeOptions = createTheme({
       color: colors.coco,
     },
     button: {
-      fontWeight: 'bold'
-    }
+      fontWeight: 'bold',
+    },
   },
 })
 

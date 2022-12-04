@@ -1,5 +1,6 @@
 import { useMap } from 'react-leaflet'
-import { Button } from 'MUI'
+import { IconButton, Button } from 'MUI'
+import HomeIcon from '@mui/icons-material/Home'
 
 export const ShowAllButton = () => {
   const map = useMap()
@@ -7,13 +8,27 @@ export const ShowAllButton = () => {
     map.setView({ lat: 55.9491414, lng: -3.1805859 }, 7)
   }
   return (
-    <Button
+    <IconButton
       onClick={showAllScotland}
-      variant="contained"
-      color="warning"
-      className="showAllButton"
+      aria-label="Show all of Scotland"
+      size="small"
+      // mock the style of leaflet zoom controls
+      sx={{
+        position: 'absolute',
+        top: '80px',
+        right: '10px',
+        zIndex: 1000,
+        backgroundColor: 'white',
+        borderRadius: 1,
+        height: '34px',
+        width: '34px',
+        border: '2px solid rgba(0,0,0,0.35)',
+        '&:hover': {
+          backgroundColor: '#f4f4f4'
+        }
+      }}
     >
-      Show all Scotland
-    </Button>
+      <HomeIcon />
+    </IconButton>
   )
 }

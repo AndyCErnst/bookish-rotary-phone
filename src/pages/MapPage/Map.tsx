@@ -9,9 +9,10 @@ import {
   useMapEvents,
   useMap,
   Tooltip,
+  ZoomControl,
 } from 'react-leaflet'
 import { Button } from 'MUI'
-import {  Location, LatLon } from 'types'
+import { Location, LatLon } from 'types'
 import { locationMap } from 'data'
 import { ShowAllButton } from './ShowAllButton'
 import { colors } from 'utils/color'
@@ -37,11 +38,13 @@ export const MapWrapper = (props: MapProps) => {
         center={startingPosition}
         zoom={13}
         scrollWheelZoom={false}
+        zoomControl={false}
       >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
+        <ZoomControl position="topright" />
         <Map {...props} />
       </MapContainer>
     </div>
@@ -84,7 +87,13 @@ const Map = ({
         <Button
           onClick={resetFilters}
           variant="contained"
-          className="resetFiltersButton"
+          sx={{
+            backgroundColor: colors.coffee,
+            position: 'absolute',
+            top: '8px',
+            left: '8px',
+            zIndex: 1000,
+          }}
         >
           Reset Filters
         </Button>
@@ -139,7 +148,12 @@ const AreaCircle = ({
         click: (e) => onClick(placename, e.latlng),
       }}
     >
-      <Tooltip direction="bottom" offset={[0, radius]} opacity={1} className="tooltip">
+      <Tooltip
+        direction="bottom"
+        offset={[0, radius]}
+        opacity={1}
+        className="tooltip"
+      >
         {placename} ({count})
       </Tooltip>
     </CircleMarker>
