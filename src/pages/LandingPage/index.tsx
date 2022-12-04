@@ -46,7 +46,12 @@ export const LandingPage = () => {
           component={Stack}
           justifyContent="center"
           alignItems="center"
-          sx={{ height: '100%', fontSize: '70px', textAlign: 'center' }}
+          sx={{
+            height: '100%',
+            fontSize: '70px',
+            textAlign: 'center',
+            color: colors.white,
+          }}
         >
           1650- 1910
         </T>
@@ -87,7 +92,12 @@ export const LandingPage = () => {
     ],
     [<NullBlock />, 3],
     [
-      <ImageBlock src={Harps} alt="Ink print of two harps" color="oldpaper" fit />,
+      <ImageBlock
+        src={Harps}
+        alt="Ink print of two harps"
+        color="oldpaper"
+        fit
+      />,
       3,
     ],
     [

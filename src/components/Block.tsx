@@ -58,8 +58,9 @@ export const TitleBlock = ({
   to,
   ...props
 }: TitleBlockProps) => {
+  const color = props.darkText ? colors.coffee : colors.white
   const Title = (
-    <T variant="h2" component="div" sx={{ width: '100%', mb: 2 }}>
+    <T variant="h2" component="div" sx={{ width: '100%', mb: 2, color }}>
       {title}
     </T>
   )
@@ -68,7 +69,7 @@ export const TitleBlock = ({
       <Box
         component={Link}
         to={to}
-        sx={{ color: props.darkText ? colors.coffee : colors.white }}
+        sx={{ color }}
       >
         <Stack justifyContent="space-between" sx={{ height: '100%' }}>
           <div>
