@@ -47,6 +47,7 @@ const matchesCats = (
   return true
 }
 
+
 export const MapView = () => {
   const [activeCats, setCats] = useState<Category[]>(catsList)
   const [noneCat, setNoneCat] = useState<boolean>(true)
@@ -103,22 +104,12 @@ export const MapView = () => {
   return (
     <Page title="Where were the Broadsides?">
       <Box sx={{ position: 'relative' }}>
-        <Box
-          sx={{
-            position: 'absolute',
-            bottom: '8px',
-            left: '8px',
-            zIndex: 1000,
-            backgroundColor: colors.yellowed,
-          }}
-        >
-          <FilterControl
-            setCats={setCats}
-            activeCats={activeCats}
-            noneCat={noneCat}
-            setNoneCat={setNoneCat}
-          />
-        </Box>
+        <FilterControl
+          setCats={setCats}
+          activeCats={activeCats}
+          noneCat={noneCat}
+          setNoneCat={setNoneCat}
+        />
         <MapWrapper
           locationCounts={locationCounts}
           onSelectLocation={setLocation}

@@ -1,12 +1,11 @@
 import { useCallback } from 'react'
 import {
-  Button,
   Stack,
-  T,
   FormLabel,
   FormGroup,
   Checkbox,
   FormControlLabel,
+  Box,
 } from 'MUI'
 import { Category, catsList } from 'types'
 
@@ -44,7 +43,16 @@ export const FilterControl = ({
   const labelStyle = {justifyContent: 'space-between', marginLeft: 0, maxWidth: 130}
 
   return (
-    <Stack margin={2} spacing={2} component="fieldset">
+    <Box
+    sx={{
+      position: 'absolute',
+      bottom: '8px',
+      left: '8px',
+      zIndex: 1000,
+      backgroundColor: 'rgba(255, 255, 255, 0.6)',
+    }}
+  >
+    <Stack marginX={2} marginY={1} spacing={2} component="fieldset">
       <FormLabel component="legend">Topics</FormLabel>
       <FormGroup >
         {catsList.map((cat) => (
@@ -71,5 +79,6 @@ export const FilterControl = ({
         />
       </FormGroup>
     </Stack>
+    </Box>
   )
 }
