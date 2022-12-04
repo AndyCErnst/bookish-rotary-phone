@@ -25,6 +25,14 @@ export const theme: ThemeOptions = createTheme({
         },
       },
     },
+    MuiFormLabel: {
+      styleOverrides: {
+        root: {
+          fontFamily: fonts.heading,
+          color: colors.blackish,
+        }
+      }
+    }
     // MuiTooltip: {
     //   styleOverrides: {
     //     popper: {

@@ -1,6 +1,6 @@
 import { useState, useCallback, useMemo, useEffect } from 'react'
 import { Category } from 'types'
-import { Grid, Container, Stack, T } from 'MUI'
+import { Grid, Box, Stack, T } from 'MUI'
 import { Page } from 'layouts/Page'
 import { ArticleList } from 'components/ArticleList'
 import { ResultsNumber } from 'components/ResultsNumber'
@@ -110,11 +110,6 @@ export const MapView = () => {
             setNoneCat={setNoneCat}
           />
         </Grid>
-        <Grid xs={12} md={8}>
-          <Container>
-            <TimeControl timeRange={timeRange} setTimeRange={setTimeRange} />
-          </Container>
-        </Grid>
       </Grid>
 
       <MapWrapper
@@ -123,16 +118,16 @@ export const MapView = () => {
         selectedLocation={location}
         resetFilters={filtering ? resetFilters : undefined}
       />
+      <Box sx={{marginTop: 6, px: 2}}>
+        <TimeControl timeRange={timeRange} setTimeRange={setTimeRange} />
+      </Box>
       <section>
         <Stack
-          flexDirection="row"
-          alignItems="flex-end"
+          flexDirection={{xs: 'column', md: "row"}}
           justifyContent="space-between"
           sx={{ marginTop: 6, marginBottom: 2 }}
         >
-          <T variant="h2" >
-            Matching Broadsides
-          </T>
+          <T variant="h2">Matching Broadsides</T>
           <ResultsNumber
             matching={listed}
             location={location}

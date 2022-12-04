@@ -29,7 +29,7 @@ export const Now = () => {
           the topics of yore mirror what's popular today as well.
         </Box>
 
-        <Grid container spacing={{xs: 1, md:4}} sx={{ overflowY: 'hidden' }}>
+        <Grid container spacing={{ xs: 1, md: 4 }} sx={{ overflowY: 'hidden' }}>
           <ThenAndNow />
           <Row title="Medium" left={Then1} leftAlt="" right={Now1} rightAlt="">
             Nowadays, people are more likely to find their news on mobile apps
@@ -97,8 +97,8 @@ export const Now = () => {
             for all matter of sins, often ending in execution or transportation
             to foreign lands. Although modern day trials in Scotland are fairer
             and carry sentences that are less life-threatening, big trials are
-            still documented by the media with utmost scrutiny (cue 'Wagatha
-            Christie').
+            still documented by the media with utmost scrutiny (eg. Johnny Depp
+            v. Amber Heard).
           </Row>
           <Row
             title="Love and Courtship"

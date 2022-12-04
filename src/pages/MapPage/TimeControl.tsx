@@ -1,4 +1,5 @@
-import { Slider, FormLabel } from 'MUI'
+import { Slider, FormLabel, Grid } from 'MUI'
+import './TimeControl.css'
 
 interface Props {
   timeRange: [number, number]
@@ -21,18 +22,22 @@ export const TimeControl = ({ timeRange, setTimeRange }: Props) => {
     setTimeRange(newValue as [number, number])
   }
   return (
-    <div>
-      <FormLabel id="time-label">Filter by year</FormLabel>
-
-      <Slider
-        aria-labelledby="time-label"
-        min={min}
-        max={max}
-        onChange={handleChange}
-        value={timeRange}
-        marks={marks}
-        valueLabelDisplay="auto"
-      />
-    </div>
+    <Grid container spacing={2}>
+      <Grid xs={12} md={3}>
+        <FormLabel id="time-label">Filter by year</FormLabel>
+      </Grid>
+      <Grid xs={12} md={9}>
+        <Slider
+          aria-labelledby="time-label"
+          min={min}
+          max={max}
+          onChange={handleChange}
+          value={timeRange}
+          marks={marks}
+          classes={{ valueLabel: 'valueLabel' }}
+          valueLabelDisplay="auto"
+        />
+      </Grid>
+    </Grid>
   )
 }
