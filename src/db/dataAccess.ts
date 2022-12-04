@@ -1,20 +1,49 @@
-import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
+import {
+  getDatabase,
+  ref,
+  set,
+  onValue,
+  update,
+  push,
+  child,
+} from 'firebase/database'
+import { app } from './init'
+import { Reaction } from 'types'
+import { broadsides, broadsidesList } from 'data'
 // Follow this pattern to import other Firebase services
-// import { } from 'firebase/<service>';
 
-// TODO: Replace the following with your app's Firebase project configuration
-const firebaseConfig = {
-  //...
-};
+const db = getDatabase(app)
 
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+export type Vote = {type: Reaction, add: boolean}
 
-// // Get a list of cities from your database
-// async function getCities(db) {
-//   const citiesCol = collection(db, 'cities');
-//   const citySnapshot = await getDocs(citiesCol);
-//   const cityList = citySnapshot.docs.map(doc => doc.data());
-//   return cityList;
-// }
+// writing a whole record, only using this for initial set up
+function writeUserData(broadsideId: number) {
+  const data: Record<Reaction, number> = {
+    enjoyable: 0,
+    funny: 0,
+    sad: 0
+  }
+  set(ref(db, 'votes/' + broadsideId), data)
+}
+
+// listen for updates
+const starCountRef = ref(db, 'posts/' + '1234' + '/starCount')
+onValue(starCountRef, (snapshot) => {
+  const data = snapshot.val()
+  // updateStarCount(postElement, data);
+})
+
+// update child node
+export function writeVote(broadsideId: string, vote: Vote) {
+  const updateUrl = ref(db, 'votes/' + broadsideId )
+  console.log('vote value ', updateUrl.toJSON())
+  // ServerValue.increment(1)
+  return
+  const postData = vote
+  // need to get current value...
+  const newPostKey = push(child(ref(db), 'votes')).key
+
+  const updates = { ['/votes/' + broadsideId]: postData}
+
+  return update(ref(db), updates)
+}

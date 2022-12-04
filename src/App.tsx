@@ -3,6 +3,8 @@ import { createTheme, ThemeOptions, ThemeProvider } from '@mui/material/styles'
 import { MapContextProvider} from 'contexts/MapContext'
 import { router } from './Routes/index'
 import { colors, fonts } from 'utils/color'
+import './db/dataAccess'
+
 import './App.css'
 
 // Quick fix for buttons and links that aren't keyboard accessible

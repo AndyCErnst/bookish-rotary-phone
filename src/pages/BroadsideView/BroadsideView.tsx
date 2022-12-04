@@ -28,7 +28,7 @@ export const BroadsideView = () => {
             </strong>
           ) : null}
         </div>
-        <Vote />
+        <Vote id={id} />
       </Stack>
       <Stack direction="row" className="Broadside__container" spacing={2}>
         <div className="Broadside__body">{text}</div>
