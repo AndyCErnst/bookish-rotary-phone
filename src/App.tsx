@@ -10,7 +10,6 @@ import './App.css'
 // document.addEventListener('keypress', (e: KeyboardEvent) =>{
 //   // @ts-ignore
 //   if([' ', 'Return'].includes(e.key) && ['button', 'menuitem'].includes(e.target?.role)) {
-//     console.log('Keyboard click on ', e.target)
 //     // @ts-ignore
 //     e.target?.click()
 //   }

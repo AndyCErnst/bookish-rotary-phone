@@ -147,16 +147,3 @@ const normalizeSize = (size: number) => {
   const reduced = Math.sqrt(size) * 2.5 + 4
   return reduced < 7 ? 7 : reduced
 }
-
-// function EventsComponent() {
-//   const map = useMapEvents({
-//     click: () => {
-//       console.log(map.locate())
-//     },
-//     locationfound: (location) => {
-//       map.panTo(location.latlng)
-//       console.log('location found:', location)
-//     },
-//   })
-//   return null
-// }
