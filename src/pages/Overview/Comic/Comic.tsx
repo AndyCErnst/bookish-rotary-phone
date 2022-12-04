@@ -8,32 +8,29 @@ import Comic5 from './images/storyboard 5.png'
 import Comic6 from './images/storyboard 6.png'
 const images = [Comic1, Comic2, Comic3, Comic4, Comic5, Comic6]
 
+const marks = [
+  { value: 92, label: '21st Century' },
+  { value: 78, label: 'Mid 19th Century' },
+  { value: 51, label: '19th Century' },
+  { value: 33, label: '18th Century' },
+  { value: 0, label: '17th Century' },
+]
 export const Comic = () => {
   const ref = useRef<HTMLDivElement>(null)
   const [time, setTime] = useState(0)
-  
-  const formatLabel = (e: number) => {
-   if(e >= 92) {
-    return '21st Century'
-   }
 
-   if(e >= 78) {
-    return 'Mid 19th Century'
-   }
-   if(e >= 51) {
-    return '19th Century'
-   }
-   if(e >= 33) {
-    return '18th Century'
-   }
-   return '17th Century'
+  const formatLabel = (e: number) => {
+    for (const { value, label } of marks) {
+      if (e >= value) return label
+    }
   }
 
   const handleChange = (e: Event, newValue: number | number[]) => {
     // image total width is scrollWidth (16821px)
     setTime(newValue as number)
-    const {scrollWidth, clientWidth } = ref.current!
-    const scrollTarget = (scrollWidth - clientWidth) * ((newValue as number) / 100)
+    const { scrollWidth, clientWidth } = ref.current!
+    const scrollTarget =
+      (scrollWidth - clientWidth) * ((newValue as number) / 100)
     ref.current?.scroll({ left: scrollTarget })
   }
   return (
@@ -58,7 +55,7 @@ export const Comic = () => {
         onChange={handleChange}
         value={time}
         valueLabelFormat={formatLabel}
-        // marks={marks}
+        marks={marks}
         valueLabelDisplay="auto"
       />
     </Box>
