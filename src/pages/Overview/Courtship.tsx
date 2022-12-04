@@ -1,4 +1,3 @@
-import { Stack, Grid } from 'MUI'
 import { useParams } from 'react-router-dom'
 import { Post } from 'components/Post'
 import { Category } from 'types'
@@ -12,12 +11,14 @@ import Courtship2 from 'images/deco/courtship/74411271.3.jpg'
 import Courtship3 from 'images/deco/courtship/74414359.3.jpg'
 import Courtship4 from 'images/deco/courtship/74414467.3.jpg'
 import Courtship5 from 'images/deco/courtship/74417183.3.jpg'
+import CourtLoc from 'images/viz/Courtship-Locations Plot.png'
+import CourtWords from 'images/viz/Love_Words.png'
 
 export const Courtship = () => {
   const params = useParams<{ topic: Category }>()
   return (
     <OverviewBase
-      title="Courtship"
+      title="Love and Courtship"
       sections={[
         [
           <Post>
@@ -35,15 +36,15 @@ export const Courtship = () => {
         ],
         [
           <Post>
-            <ClickableImage name="viz/Courtship-Locations Plot.png" />
+            <ClickableImage src={CourtLoc} />
           </Post>,
-          5,
+          6,
         ],
         [
           <Post>
-            <ClickableImage name="viz/Love_Words.png" />
+            <ClickableImage src={CourtWords} />
           </Post>,
-          7,
+          6,
         ],
         [<BroadsidesOfDay topic={params.topic!} />, 4],
         [<FlourishBreak />, 12],

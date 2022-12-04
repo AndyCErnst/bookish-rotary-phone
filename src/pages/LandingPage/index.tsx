@@ -77,7 +77,7 @@ export const LandingPage = () => {
       9,
     ],
     [<ImageBlock src={Song} alt="Ink printing of man playing bagpipes" />, 3],
-    [<TitleBlock to="/topic/courtship" color="tan" title={'Courtship'} />, 3],
+    [<TitleBlock to="/topic/courtship" color="tan" title={'Love and Courtship'} />, 3],
     [
       <ImageBlock
         src={SongEmbrace}
@@ -87,7 +87,7 @@ export const LandingPage = () => {
     ],
     [<NullBlock />, 3],
     [
-      <TitleBlock to="/topic/songs and poems" color="coffee" title={'Songs'} />,
+      <TitleBlock to="/topic/songs and poems" color="coffee" title={'Songs and Poems'} />,
       3,
     ],
     [<NullBlock />, 3],

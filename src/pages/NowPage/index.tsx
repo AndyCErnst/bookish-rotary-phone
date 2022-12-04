@@ -38,7 +38,7 @@ export const Now = () => {
           </Row>
 
           <Row
-            title="Aethetics"
+            title="Aesthetics"
             left={Then2}
             leftAlt=""
             right={Now2}
