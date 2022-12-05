@@ -51,7 +51,7 @@ export const Courtship = () => {
         </div>
 
         <div>
-          <h2>Populate Topics</h2>
+          <h2>Popular Topics</h2>
           <ClickableImage src={CourtTopics} />
         </div>
         <div>
