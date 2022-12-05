@@ -1,5 +1,4 @@
 import { Stack } from 'MUI'
-import { BroadsideImage } from 'components/Image'
 import { ClickableImage } from 'components/ClickableImage'
 import { Page } from 'layouts/Page'
 import PerYear from 'images/viz/BroadsidesBasics_No._broadsides_per_year.png'
@@ -10,7 +9,7 @@ import { Comic } from './Comic/Comic'
 export const AboutBroadsides = () => {
   return (
     <Page title="About Scottish Broadsides">
-      <Stack spacing={4}>
+      <Stack spacing={{md:4}}>
         <p>
           Broadsides are single sided newspaper sheets posted in public places
           and sold by street vendors. They were and early version of the tabloid
@@ -36,7 +35,7 @@ export const AboutBroadsides = () => {
           <h2>When Were They Reading It?</h2>
           <ClickableImage src={PerYear} />
         </div>
-        
+
         <Stack
           direction={{ xs: 'column', md: 'row' }}
           spacing={2}
