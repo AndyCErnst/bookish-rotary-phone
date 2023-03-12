@@ -11,9 +11,12 @@ const firebaseConfig = {
   appId: "1:482114629690:web:2584584e5fae88f6040503"
 };
 
+
 export const app = initializeApp(firebaseConfig);
 
-const appCheck = initializeAppCheck(app, {
-  provider: new ReCaptchaV3Provider('6LeAhokjAAAAALjeVS4xcbQacvrhrRt6yrBKMdWr'),
-  isTokenAutoRefreshEnabled: true
-});
+if(process.env.NODE_ENV !== 'development') {
+  const appCheck = initializeAppCheck(app, {
+    provider: new ReCaptchaV3Provider('6LeAhokjAAAAALjeVS4xcbQacvrhrRt6yrBKMdWr'),
+    isTokenAutoRefreshEnabled: true
+  });
+}
