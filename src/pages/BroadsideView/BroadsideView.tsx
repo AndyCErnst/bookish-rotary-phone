@@ -2,7 +2,7 @@ import { Stack, DialogTitle, Dialog } from 'MUI'
 import { useParams } from 'react-router-dom'
 import { broadsides } from 'data'
 import { ClickableImage } from 'components/ClickableImage'
-import { Vote } from 'components/Vote'
+// import { Vote } from 'components/Vote'
 import { ErrorPage } from 'pages/ErrorPage/ErrorPage'
 import { Page } from 'layouts/Page'
 import './BroadsideView.css'
@@ -28,7 +28,7 @@ export const BroadsideView = () => {
             </strong>
           ) : null}
         </div>
-        <Vote id={id} />
+        {/* <Vote id={id} /> */}
       </Stack>
       <Stack direction="row" className="Broadside__container" spacing={2}>
         <div className="Broadside__body">{text}</div>

@@ -3,8 +3,6 @@ import { Container } from 'MUI'
 import { Nav } from 'components/Nav'
 import { Footer } from 'components/Footer'
 import { ScrollToTop } from './ScrollToTop'
-import { votesRef } from 'db/dataAccess'
-import { useObject } from 'react-firebase-hooks/database'
 import './MainLayout.css'
 
 export const MainLayout = () => {
