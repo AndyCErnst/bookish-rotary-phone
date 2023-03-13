@@ -23,7 +23,7 @@ export const BroadsideView = () => {
           <br />
           {categories.length ? (
             <strong>
-              Topic - {categories.join(' ')}
+              Topic - {categories.join(', ')}
               <br />
             </strong>
           ) : null}

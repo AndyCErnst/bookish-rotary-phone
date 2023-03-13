@@ -115,7 +115,7 @@ export const MapView = () => {
     <Page title="Where Were the Broadsides?">
       <p>
         This interactive map shows where in Scotland you could find Broadsides.
-        Specifically, this indicates the locations mentioned in the text of
+        Specifically, this indicates the locations <em>mentioned</em> in the text of
         Broadsides, as the location published and sold are difficult to know
         accurately. The size of each circle represents the number of mentions of
         each location. You can filter by year or by category and see the map
