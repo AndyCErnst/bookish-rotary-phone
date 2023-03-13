@@ -1,4 +1,5 @@
 import { broadsidesList } from "data";
+import { Category } from "types";
 
 // This is mulberry32 from
 // https://stackoverflow.com/questions/521295/seeding-the-random-number-generator-in-javascript
@@ -18,12 +19,15 @@ export const getSeededGen = () => {
   return getRandGenerator(parseInt(dateStr));
 };
 
-export const getStableRandomBroadsides = () => {
+export const getStableRandomBroadsides = (topic: Category) => {
   const gen = getSeededGen();
+  const bss = broadsidesList.filter(bs => bs.categories.includes(topic))
+
+  
   // Possible to get duplicates, but not worrying for now
   return [gen(), gen(), gen(), gen(), gen()]
-    .map((n) => Math.floor(n * broadsidesList.length))
-    .map((n) => broadsidesList[n]);
+    .map((n) => Math.floor(n * bss.length))
+    .map((n) => bss[n]);
 };
 
 export const getRandomBroadside = () => broadsidesList[Math.floor(Math.random() * broadsidesList.length)]

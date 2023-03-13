@@ -21,7 +21,7 @@ export const BroadsideView = () => {
         <div>
           <strong>{year}</strong>
           <br />
-          {categories ? (
+          {categories.length ? (
             <strong>
               Topic - {categories.join(' ')}
               <br />

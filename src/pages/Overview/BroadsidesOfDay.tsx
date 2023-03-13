@@ -6,7 +6,7 @@ import { getStableRandomBroadsides } from 'utils/randomGenerator'
 
 // this isn't filtering by category atm
 export const BroadsidesOfDay = ({ topic }: { topic: Category }) => {
-  const broads = getStableRandomBroadsides()
+  const broads = getStableRandomBroadsides(topic)
 
   return (
     <Post>
