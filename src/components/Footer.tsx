@@ -58,9 +58,9 @@ export function Footer() {
             <Link to="/search">Search</Link>
           </Grid>
           <Grid sm={6} md={4} lg={2}>
-            <Link to="https://data.nls.uk/data/digitised-collections/broadsides-printed-in-scotland/">
+            <a href="https://data.nls.uk/data/digitised-collections/broadsides-printed-in-scotland/">
               Data Source (NLS)
-            </Link>
+            </a>
           </Grid>
         </Grid>
       </Container>
@@ -68,12 +68,11 @@ export function Footer() {
         <Stack justifyContent="center">
         <T variant="body2" color="text.secondary" align="center">
           {'Broadside data is property of '}
-          <Link
-            color="inherit"
-            to="https://data.nls.uk/data/digitised-collections/broadsides-printed-in-scotland/"
+          <a
+            href="https://data.nls.uk/data/digitised-collections/broadsides-printed-in-scotland/"
           >
             The National Library of Scotland
-          </Link>
+          </a>
         </T>
         <T variant="body2" color="text.secondary" align="center">
           {`Website ©Andy Ernst ${new Date().getFullYear()}.`}
