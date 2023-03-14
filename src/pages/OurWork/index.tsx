@@ -1,23 +1,29 @@
-import { Grid, T, Box } from 'MUI'
+import { Grid, Box } from 'MUI'
 import { colors } from 'utils/color'
 import Arrow from 'images/icons/arrow.svg'
 import { Page } from 'layouts/Page'
+import NLSLogo from 'images/nls logo dark.png'
 
 export const OurWork = () => {
   return (
     <Page title="Behind the Headlines">
       <p>
-        This website is the product of a huge amount of work by our team.
-        We are a group of postgraduate students at the University of
-        Edinburgh: Andy Ernst, Grace Forsyth, Francesca Hearn-Yeates,
-        Siwei Zhu, and Loryn Sun.
+        This website is the product of a huge amount of work by our team. We are
+        a group of postgraduate students at the University of Edinburgh: Andy
+        Ernst, Grace Forsyth, Francesca Hearn-Yeates, Siwei Zhu, and Loryn Sun.
         <br />
-        <br />
-        The Broadsides dataset was provided to us as a collection of XML
-        files and scanned images. We have converted, processed, and
-        analysed this dataset to create a searchable and explorable
-        website allowing this fascinating piece of Scottish history to
-        become accessible to a wide audience.
+        <a href="https://data.nls.uk/data/digitised-collections/broadsides-printed-in-scotland/">
+        <Box sx={{ py: 2, textAlign: 'center'}}>
+          <img src={NLSLogo} alt={'the National Museum of Scotland'} />
+          </Box>
+        </a>
+        <a href="https://data.nls.uk/data/digitised-collections/broadsides-printed-in-scotland/">
+          The National Library of Scotland
+        </a>{' '}
+        provided the Broadsides dataset to us as a collection of XML files and
+        scanned images. We have converted, processed, and analysed this dataset
+        to create a searchable and explorable website allowing this fascinating
+        piece of Scottish history to become accessible to a wide audience.
         <br />
         <br />
         The flow diagram below details our developmental process:
@@ -67,10 +73,10 @@ export const OurWork = () => {
 const ConnectingArrow = () => {
   return (
     <>
-    <Grid sm={4} justifyContent="center" sx={{display: 'flex'}}>
-      <Box component={'img'} src={Arrow} />
-    </Grid>
-    <Grid sm={8} />
+      <Grid sm={4} justifyContent="center" sx={{ display: 'flex' }}>
+        <Box component={'img'} src={Arrow} />
+      </Grid>
+      <Grid sm={8} />
     </>
   )
 }

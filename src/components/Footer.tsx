@@ -69,6 +69,7 @@ export function Footer() {
         <T variant="body2" color="text.secondary" align="center">
           {'Broadside data is property of '}
           <a
+
             href="https://data.nls.uk/data/digitised-collections/broadsides-printed-in-scotland/"
           >
             The National Library of Scotland
