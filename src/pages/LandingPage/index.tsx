@@ -81,7 +81,7 @@ export const LandingPage = () => {
     [
       <ImageBlock
         src={SongEmbrace}
-        alt="Ink printing a man and woman embracing"
+        alt="Ink print of a man and woman embracing"
       />,
       3,
     ],
