@@ -68,7 +68,7 @@ export const LandingPage = () => {
         title={'What are the Scottish Broadsides?'}
         darkText
       >
-        Broadsides are single sided newspaper sheets posted in public places and
+        Broadsides were single sided newspaper sheets posted in public places and
         sold by street vendors. They were and early version of the tabloid
         press. Broadsides first printed official notices and royal proclamations
         but later, the broadsides became an early form of popular culture, by

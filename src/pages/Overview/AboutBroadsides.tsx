@@ -11,7 +11,7 @@ export const AboutBroadsides = () => {
     <Page title="About Scottish Broadsides">
       <Stack spacing={{md:4}}>
         <p>
-          Broadsides are single sided newspaper sheets posted in public places
+          Broadsides were single sided newspaper sheets posted in public places
           and sold by street vendors. They were and early version of the tabloid
           press. Broadsides first printed official notices and royal
           proclamations but later, the Broadsides became an early form of
