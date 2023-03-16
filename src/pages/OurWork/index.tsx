@@ -10,7 +10,7 @@ export const OurWork = () => {
       <p>
         This website is the product of a huge amount of work by our team. We are
         a group of postgraduate students at the University of Edinburgh: Andy
-        Ernst, Grace Forsyth, Francesca Hearn-Yeates, Siwei Zhu, and Loryn Sun.
+        Ernst, Siwei Zhu, Liyuan Sun, Grace Forsyth, and Francesca Hearn-Yeates.
         <br />
         <a href="https://data.nls.uk/data/digitised-collections/broadsides-printed-in-scotland/">
         <Box sx={{ py: 2, textAlign: 'center'}}>
